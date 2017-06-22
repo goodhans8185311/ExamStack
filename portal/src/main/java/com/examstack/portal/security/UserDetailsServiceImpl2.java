@@ -8,7 +8,6 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.examstack.common.domain.user.User;
@@ -23,8 +22,7 @@ public class UserDetailsServiceImpl2 implements UserDetailsService {
 		
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		
+
 		User user = userMapper.getUserByName(username);
 		if(user == null)
 			throw new UsernameNotFoundException("user not found!");

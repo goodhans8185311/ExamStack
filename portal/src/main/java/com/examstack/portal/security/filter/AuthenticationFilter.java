@@ -12,7 +12,6 @@ import org.springframework.security.authentication.AuthenticationServiceExceptio
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.util.StringUtils;
@@ -20,7 +19,6 @@ import org.springframework.util.StringUtils;
 import com.examstack.common.domain.exam.Exam;
 import com.examstack.common.domain.exam.ExamHistory;
 import com.examstack.common.util.StandardPasswordEncoderForSha1;
-import com.examstack.portal.security.UserDetailsServiceImpl;
 import com.examstack.portal.security.UserInfo;
 import com.examstack.portal.service.ExamService;
 
@@ -57,7 +55,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		if(!request.getMethod().equals("POST")){
 			throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
 		}
-		if(seriNo != null && !"".equals(seriNo)){
+		if(seriNo != null && !"".equals(seriNo)){//准考证
 			//准考证直接登录，需要验证准考证有效时间（只能考试期间登录）
 			//准考证号对应的考试历史id需要保存到userInfo中，登录成功后，如果发现userInfo中考试历史id，则直接跳转到考试页面
 			//跳转成功后清空该属性
@@ -105,7 +103,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 			try {
 				authentication = this.getAuthenticationManager().authenticate(authRequest);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				throw new AuthenticationServiceException("用户名密码错误！");
 			}
 			UserInfo userDetails = (UserInfo)authentication.getPrincipal();

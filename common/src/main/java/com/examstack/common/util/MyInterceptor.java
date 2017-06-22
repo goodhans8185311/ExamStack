@@ -32,12 +32,15 @@ public class MyInterceptor implements Interceptor {
 	private Page<?> page;
 	private static Log log = LogFactory.getLog(MyInterceptor.class);
 	public synchronized Object intercept(Invocation invocation) throws Throwable {
-		// TODO Auto-generated method stub
+		
 		try{
 			RoutingStatementHandler handler = (RoutingStatementHandler) invocation.getTarget();
 			StatementHandler delegate = (StatementHandler) ReflectUtil.getFieldValue(handler, "delegate");
 			BoundSql boundSql = delegate.getBoundSql();
-			log.info("拦截sql=" + boundSql.getSql());
+			log.info("------------------------------------------  拦截sql  ----------------------------------------------");
+			log.info(boundSql.getSql());
+			log.info("--------------------------------------------------------------------------------------------------");
+			log.info(" ");
 			//获取sql对应的参数
 			MapperParamMap<?> mapperParamMap = null;
 			try{
@@ -45,7 +48,6 @@ public class MyInterceptor implements Interceptor {
 			}catch(Exception ex){
 				
 			}
-			
 			if(mapperParamMap == null){
 				Object result = invocation.proceed();
 			    return result;
@@ -80,7 +82,7 @@ public class MyInterceptor implements Interceptor {
 	}
 
 	public Object plugin(Object target) {
-		// TODO Auto-generated method stub
+		
 		return Plugin.wrap(target, this);
 	}
 

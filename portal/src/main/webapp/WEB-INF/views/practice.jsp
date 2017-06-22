@@ -43,67 +43,8 @@ a.join-practice-btn {
 </head>
 
 <body>
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-5">
-					<div class="logo">
-						<h1>
-							<a href="#"><img alt="" src="resources/images/logo.png"></a>
-						</h1>
-					</div>
-				</div>
-				<div class="col-xs-7" id="login-info">
-					<c:choose>
-							<c:when test="${not empty sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}">
-								<div id="login-info-user">
-									
-									<a href="user-detail/${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}" id="system-info-account" target="_blank">${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</a>
-									<span>|</span>
-									<a href="j_spring_security_logout"><i class="fa fa-sign-out"></i> 退出</a>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<a class="btn btn-primary" href="user-register">用户注册</a>
-								<a class="btn btn-success" href="user-login-page">登录</a>
-							</c:otherwise>
-					</c:choose>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Navigation bar starts -->
-
-	<div class="navbar bs-docs-nav" role="banner">
-		<div class="container">
-			<nav class="collapse navbar-collapse bs-navbar-collapse"
-				role="navigation">
-				<ul class="nav navbar-nav">
-						<li>
-							<a href="home"><i class="fa fa-home"></i>主页</a>
-						</li>
-						<li class="active">
-							<a href="student/practice-list"><i class="fa fa-edit"></i>试题练习</a>
-						</li>
-						<li>
-							<a href="exam-list"><i class="fa  fa-paper-plane-o"></i>在线考试</a>
-						</li>
-						<li>
-							<a href="training-list"><i class="fa fa-book"></i>培训资料</a>
-						</li>
-						<li>
-							<a href="student/usercenter"><i class="fa fa-dashboard"></i>会员中心</a>
-						</li>
-						<li>
-							<a href="student/setting"><i class="fa fa-cogs"></i>个人设置</a>
-						</li>
-					</ul>
-			</nav>
-		</div>
-	</div>
-
-	<!-- Navigation bar ends -->
-
+    
+    <%@include file="common/header.jsp"%>
 	<!-- Slider starts -->
 	<div class="content" style="margin-bottom: 100px;">
 
@@ -201,33 +142,11 @@ a.join-practice-btn {
 					<a class="btn btn-success " href="student/practice-test/${fieldId }">随机来20道 </i>
 					</a>
 				</div>
-
 			</div>
-
-
 		</div>
-
 	</div>
-
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="copy">
-						<p>
-							ExamStack Copyright © <a href="http://www.examstack.com/"
-								target="_blank">ExamStack</a> - <a href="." target="_blank">主页</a>
-							| <a href="http://www.examstack.com/" target="_blank">关于我们</a> | <a
-								href="http://www.examstack.com/" target="_blank">FAQ</a> | <a
-								href="http://www.examstack.com/" target="_blank">联系我们</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</footer>
+     
+    <%@include file="common/footer.jsp"%>
 
 	<!-- Slider Ends -->
 
@@ -287,14 +206,7 @@ a.join-practice-btn {
 			});
 		}
 	</script>
-	<script type="text/javascript">
-		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://"
-				: " http://");
-		document
-				.write(unescape("%3Cspan id='cnzz_stat_icon_1252987997'%3E%3C/span%3E%3Cscript src='"
-						+ cnzz_protocol
-						+ "s19.cnzz.com/z_stat.php%3Fid%3D1252987997' type='text/javascript'%3E%3C/script%3E"));
-	</script>
+	
 </body>
 </html>
 
