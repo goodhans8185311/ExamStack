@@ -22,13 +22,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
 		
 		User user = null;
 		try {
 			user = userMapper.getUserByName(username);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(user == null)
