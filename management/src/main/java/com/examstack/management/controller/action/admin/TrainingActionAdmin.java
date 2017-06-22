@@ -18,6 +18,8 @@ import com.examstack.management.service.TrainingService;
 public class TrainingActionAdmin {
 	@Autowired
 	private TrainingService trainingService;
+	
+	
 	@RequestMapping(value = "admin/training/add-training", method = RequestMethod.POST)
 	public @ResponseBody Message addTraining(@RequestBody Training training) {
 
@@ -28,7 +30,6 @@ public class TrainingActionAdmin {
 			training.setCreatorId(userInfo.getUserid());
 			trainingService.addTraining(training);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -45,7 +46,6 @@ public class TrainingActionAdmin {
 			section.setUserId(userInfo.getUserid());
 			trainingService.addTrainingSection(section);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}

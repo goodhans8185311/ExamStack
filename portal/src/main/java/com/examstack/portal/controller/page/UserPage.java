@@ -1,10 +1,6 @@
 package com.examstack.portal.controller.page;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,23 +13,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.request.RequestScope;
 
-import com.examstack.common.domain.exam.Exam;
-import com.examstack.common.domain.exam.ExamPaper;
-import com.examstack.common.domain.exam.UserQuestionHistory;
 import com.examstack.common.domain.news.News;
-import com.examstack.common.domain.question.Field;
-import com.examstack.common.domain.question.KnowledgePoint;
-import com.examstack.common.domain.question.QuestionQueryResult;
-import com.examstack.common.domain.question.QuestionType;
 import com.examstack.common.domain.user.Department;
-import com.examstack.common.domain.user.User;
 import com.examstack.common.util.Page;
 import com.examstack.portal.security.UserInfo;
 import com.examstack.portal.service.ExamService;
 import com.examstack.portal.service.NewsService;
-import com.examstack.portal.service.QuestionHistoryService;
 import com.examstack.portal.service.QuestionService;
 import com.examstack.portal.service.UserService;
 

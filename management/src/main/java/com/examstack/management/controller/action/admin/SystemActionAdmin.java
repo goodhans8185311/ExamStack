@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,8 +55,6 @@ public class SystemActionAdmin {
 		try {
 			userService.addUser(user, "ROLE_ADMIN", -1, userInfo.getRoleMap());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-
 			if(e.getMessage().contains(user.getUserName())){
 				message.setResult("duplicate-username");
 				message.setMessageInfo("重复的用户名");
@@ -78,6 +75,11 @@ public class SystemActionAdmin {
 		return message;
 	}
 	
+    /**
+     * 添加新管理员
+     * @param news
+     * @return
+     */
 	@RequestMapping(value = { "/admin/add-news" }, method = RequestMethod.POST)
 	public @ResponseBody Message addUser(@RequestBody News news){
 		Message msg = new Message();
@@ -88,7 +90,6 @@ public class SystemActionAdmin {
 			news.setUserId(userInfo.getUserid());
 			newsService.addNews(news);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			msg.setResult(e.getClass().getName());
 			e.printStackTrace();
 		}

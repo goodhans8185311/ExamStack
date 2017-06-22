@@ -90,7 +90,6 @@ public class UserActionAdmin {
 		try {
 			userService.updateUser(user, null);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 
 			if(e.getMessage().contains(user.getUserName())){
 				message.setResult("duplicate-username");

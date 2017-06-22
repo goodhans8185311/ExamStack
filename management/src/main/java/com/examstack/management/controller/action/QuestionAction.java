@@ -162,7 +162,6 @@ public class QuestionAction {
 			questionService.updateQuestion(question, questionTagList);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getCause().getMessage());
 		}
@@ -204,7 +203,6 @@ public class QuestionAction {
 		try {
 			filePathList = FileUploadUtil.uploadImg(request, response, userInfo.getUsername());
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -224,7 +222,6 @@ public class QuestionAction {
 		try {
 			filePathList = FileUploadUtil.uploadFile(request, response, userInfo.getUsername());
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception ex) {
 			ex.printStackTrace();

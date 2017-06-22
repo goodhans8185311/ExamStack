@@ -30,7 +30,6 @@ import com.examstack.common.domain.exam.PaperCreatorParam;
 import com.examstack.common.domain.question.QuestionQueryResult;
 import com.examstack.common.domain.question.QuestionStruts;
 import com.examstack.common.util.QuestionAdapter;
-import com.examstack.common.util.StandardPasswordEncoderForSha1;
 import com.examstack.management.security.UserInfo;
 import com.examstack.management.service.ExamPaperService;
 import com.examstack.management.service.QuestionService;
@@ -132,6 +131,13 @@ public class ExamPaperActionAdmin {
 		return returnList;
 	}
 	
+	/**
+	 * 修改更新试卷
+	 * @param model
+	 * @param examPaperId
+	 * @param questionPointMap
+	 * @return
+	 */
 	@RequestMapping(value = "/admin/exampaper/update-exampaper/{examPaperId}", method = RequestMethod.POST)
 	public @ResponseBody
 	Message exampaperOnUpdate(Model model,
@@ -183,6 +189,11 @@ public class ExamPaperActionAdmin {
 		return message;
 	}
 	
+	/**
+	 * 删除试卷，已发布的试卷不允许删除
+	 * @param examPaperId
+	 * @return
+	 */
 	@RequestMapping(value = "admin/exampaper/paper-delete", method = RequestMethod.POST)
 	public @ResponseBody Message deleteExamPaper(@RequestBody Integer examPaperId){
 		Message message = new Message();
@@ -218,7 +229,6 @@ public class ExamPaperActionAdmin {
 			examPaperService.generateDoc(examPaper, filePath.replace(",", File.separator));
 			msg.setMessageInfo((relativePath + "," + examPaper.getName() + ".docx").replace(",", File.separator));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return msg;

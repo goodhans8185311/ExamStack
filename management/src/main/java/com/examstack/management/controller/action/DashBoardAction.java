@@ -36,6 +36,7 @@ public class DashBoardAction {
 	private ExamPaperService examPaperService;
 	@Autowired
 	private ExamService examService;
+	
 	@RequestMapping(value = "/secure/dashboard/baseinfo", method = RequestMethod.GET)
 	public @ResponseBody List<Integer> baseInfo(Model model) {
 		

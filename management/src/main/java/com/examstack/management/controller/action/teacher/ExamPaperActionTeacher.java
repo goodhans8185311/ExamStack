@@ -30,7 +30,6 @@ import com.examstack.common.domain.exam.PaperCreatorParam;
 import com.examstack.common.domain.question.QuestionQueryResult;
 import com.examstack.common.domain.question.QuestionStruts;
 import com.examstack.common.util.QuestionAdapter;
-import com.examstack.common.util.StandardPasswordEncoderForSha1;
 import com.examstack.management.security.UserInfo;
 import com.examstack.management.service.ExamPaperService;
 import com.examstack.management.service.QuestionService;
