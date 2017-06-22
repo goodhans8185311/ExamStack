@@ -127,7 +127,6 @@ public class CommonActionAdmin {
 			}
 			message.setObject(pointMap);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			message.setResult(e.getClass().getName());
 		}
@@ -148,7 +147,6 @@ public class CommonActionAdmin {
 		try {
 			questionService.deleteFieldByIdList(idList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -171,7 +169,6 @@ public class CommonActionAdmin {
 		try {
 			questionService.deleteKnowledgePointByIdList(idList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -195,7 +192,6 @@ public class CommonActionAdmin {
 		try {
 			questionService.deleteTagByIdList(idList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
