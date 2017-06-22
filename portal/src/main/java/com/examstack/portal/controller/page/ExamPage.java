@@ -1,12 +1,10 @@
 package com.examstack.portal.controller.page;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,11 +21,9 @@ import com.examstack.common.domain.exam.AnswerSheetItem;
 import com.examstack.common.domain.exam.Exam;
 import com.examstack.common.domain.exam.ExamHistory;
 import com.examstack.common.domain.exam.ExamPaper;
-import com.examstack.common.domain.exam.UserQuestionHistory;
 import com.examstack.common.domain.question.KnowledgePoint;
 import com.examstack.common.domain.question.QuestionQueryResult;
 import com.examstack.common.domain.question.QuestionStatistic;
-import com.examstack.common.domain.question.QuestionType;
 import com.examstack.common.util.Page;
 import com.examstack.common.util.QuestionAdapter;
 import com.examstack.portal.security.UserInfo;

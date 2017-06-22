@@ -138,7 +138,7 @@ public class PracticePage {
 	
 	
 	/**
-	 * 获取用户的练习记录（试题ID）
+	 * 获取用户的练习历史记录（试题ID）
 	 * @param userId
 	 * @param knowledgePointId
 	 * @return
