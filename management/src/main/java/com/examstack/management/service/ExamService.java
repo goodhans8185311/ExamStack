@@ -6,7 +6,6 @@ import java.util.List;
 import com.examstack.common.domain.exam.AnswerSheet;
 import com.examstack.common.domain.exam.Exam;
 import com.examstack.common.domain.exam.ExamHistory;
-import com.examstack.common.domain.exam.UserQuestionHistory;
 import com.examstack.common.domain.user.Role;
 import com.examstack.common.util.Page;
 

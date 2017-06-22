@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.examstack.common.domain.question.Field;
 import com.examstack.common.domain.question.KnowledgePoint;
 import com.examstack.common.domain.question.PointStatistic;

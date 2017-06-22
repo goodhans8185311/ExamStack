@@ -18,7 +18,6 @@ import org.apache.poi.POIXMLDocument;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 import org.apache.poi.xwpf.usermodel.TextAlignment;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,13 +48,11 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 
 	@Override
 	public List<ExamPaper> getExamPaperList(String searchStr, String paperType, Page<ExamPaper> page) {
-		// TODO Auto-generated method stub
 		return examPaperMapper.getExamPaperList(searchStr, paperType, page);
 	}
 
 	@Override
 	public void insertExamPaper(ExamPaper examPaper) {
-		// TODO Auto-generated method stub
 		examPaperMapper.insertExamPaper(examPaper);
 	}
 
@@ -64,7 +61,6 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 	public void createExamPaper(HashMap<Integer, HashMap<Integer, List<QuestionStruts>>> questionMap,
 			HashMap<Integer, Integer> questionTypeNum, HashMap<Integer, Float> questionTypePoint,
 			HashMap<Integer, Float> knowledgePointRate, ExamPaper examPaper) {
-		// TODO Auto-generated method stub
 
 		HashMap<Integer,String> knowledgeMap = (HashMap<Integer, String>) questionService.getKnowledgePointMap(0);
 		HashMap<Integer,String> typeMap = (HashMap<Integer, String>) questionService.getQuestionTypeMap();
@@ -72,7 +68,6 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 		try {
 			paper.createPaper();
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			throw new RuntimeException(e1.getMessage());
 		}
 
@@ -100,31 +95,26 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 
 	@Override
 	public ExamPaper getExamPaperById(int examPaperId) {
-		// TODO Auto-generated method stub
 		return examPaperMapper.getExamPaperById(examPaperId);
 	}
 
 	@Override
 	public void updateExamPaper(ExamPaper examPaper) {
-		// TODO Auto-generated method stub
 		examPaperMapper.updateExamPaper(examPaper);
 	}
 
 	@Override
 	public void deleteExamPaper(int id) {
-		// TODO Auto-generated method stub
 		examPaperMapper.deleteExamPaper(id);
 	}
 
 	@Override
 	public List<ExamPaper> getEnabledExamPaperList(String userName, Page<ExamPaper> page) {
-		// TODO Auto-generated method stub
 		return examPaperMapper.getEnabledExamPaperList(userName, page);
 	}
 
 	@Override
 	public void generateDoc(ExamPaper examPaper, String path) throws Exception {
-		// TODO Auto-generated method stub
 		String basePath = System.getProperty("catalina.base") + ",webapps,";
 		String filePath = basePath + "Management,resources,template,doc_tmp.docx";
 		filePath = filePath.replace(',', File.separatorChar);
@@ -172,8 +162,8 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 				File titlePic = new File(titlePicPath + questionContent.getTitleImg());
 				BufferedImage sourceImg = ImageIO.read(new FileInputStream(titlePic));
 
-				String ind = doc.addPictureData(new FileInputStream(titlePic),
-						XWPFDocument.PICTURE_TYPE_JPEG);
+//				String ind = doc.addPictureData(new FileInputStream(titlePic),
+//						XWPFDocument.PICTURE_TYPE_JPEG);
 				doc.createPicture(doc.getAllPictures().size() - 1,
 						sourceImg.getWidth() / 2, sourceImg.getHeight() / 2);
 				sourceImg.flush();
@@ -206,8 +196,8 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 						File picture = new File(picPath);
 						BufferedImage sourceImg = ImageIO.read(new FileInputStream(picture));
 						
-						String ind = doc.addPictureData(new FileInputStream(picture),
-								XWPFDocument.PICTURE_TYPE_JPEG);
+//						String ind = doc.addPictureData(new FileInputStream(picture),
+//								XWPFDocument.PICTURE_TYPE_JPEG);
 						doc.createPicture(doc.getAllPictures().size() - 1,
 								sourceImg.getWidth() / 2, sourceImg.getHeight() / 2);
 						sourceImg.flush();
@@ -232,10 +222,10 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 			out.close();
 			System.out.println("success");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	}

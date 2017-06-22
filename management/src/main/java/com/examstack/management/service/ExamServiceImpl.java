@@ -33,7 +33,6 @@ public class ExamServiceImpl implements ExamService {
 	@Transactional
 	@Override
 	public void addExam(Exam exam) {
-		// TODO Auto-generated method stub
 		try {
 			examMapper.addExam(exam);
 			if(exam.getGroupIdList() != null && exam.getGroupIdList().size() > 0){
@@ -58,7 +57,6 @@ public class ExamServiceImpl implements ExamService {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new RuntimeException(e);
 		}
 	}
@@ -97,14 +95,12 @@ public class ExamServiceImpl implements ExamService {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}
 	@Override
 	public List<Exam> getExamList(Page<Exam> page,int ... typeIdList) {
-		// TODO Auto-generated method stub
 		
 		if(typeIdList.length == 0)
 			typeIdList = null;
@@ -112,12 +108,10 @@ public class ExamServiceImpl implements ExamService {
 	}
 	@Override
 	public List<ExamHistory> getUserExamHistListByExamId(int examId, String searchStr, String order, int limit, Page<ExamHistory> page) {
-		// TODO Auto-generated method stub
 		return examMapper.getUserExamHistListByExamId(examId, searchStr, order, limit, page);
 	}
 	@Override
 	public void deleteExamById(int examId) throws Exception {
-		// TODO Auto-generated method stub
 		Exam exam = examMapper.getExamById(examId);
 		if(exam.getApproved() == 0 || exam.getApproved() == 2)
 			examMapper.deleteExamById(examId);
@@ -126,27 +120,22 @@ public class ExamServiceImpl implements ExamService {
 	}
 	@Override
 	public void changeExamStatus(int examId, int approved) {
-		// TODO Auto-generated method stub
 		examMapper.changeExamStatus(examId, approved);
 	}
 	@Override
 	public void changeUserExamHistStatus(int histId, int approved) {
-		// TODO Auto-generated method stub
 		examMapper.changeUserExamHistStatus(histId, approved);
 	}
 	@Override
 	public void updateUserExamHist(AnswerSheet answerSheet, String answerSheetStr, int approved) {
-		// TODO Auto-generated method stub
 		examMapper.updateUserExamHist(answerSheet, answerSheetStr,  approved);
 	}
 	@Override
 	public ExamHistory getUserExamHistListByHistId(int histId) {
-		// TODO Auto-generated method stub
 		return examMapper.getUserExamHistListByHistId(histId);
 	}
 	@Override
 	public void deleteUserExamHist(int histId) {
-		// TODO Auto-generated method stub
 		examMapper.deleteUserExamHist(histId);
 	}
 	@Override
@@ -156,7 +145,6 @@ public class ExamServiceImpl implements ExamService {
 	}
 	@Override
 	public ExamHistory getUserExamHistByUserIdAndExamId(int userId, int examId, int... approved) {
-		// TODO Auto-generated method stub
 		if(approved.length == 0)
 			approved = null;
 		return examMapper.getUserExamHistByUserIdAndExamId(userId, examId, approved);
@@ -165,7 +153,6 @@ public class ExamServiceImpl implements ExamService {
 	@Transactional
 	@Override
 	public void addGroupUser2Exam(List<Integer> groupIdList, int examId) {
-		// TODO Auto-generated method stub
 		
 		try {
 			Exam exam = examMapper.getExamById(examId);
@@ -197,14 +184,12 @@ public class ExamServiceImpl implements ExamService {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}
 	@Override
 	public List<ExamHistory> getUserExamHistList(Page<ExamHistory> page, int... approved) {
-		// TODO Auto-generated method stub
 		if(approved.length == 0)
 			approved = null;
 		return examMapper.getUserExamHistList(approved, page);

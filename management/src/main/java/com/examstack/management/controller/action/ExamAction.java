@@ -24,6 +24,8 @@ public class ExamAction {
 	private ExamPaperService examPaperService;
 	@Autowired
 	private ExamService examService;
+	
+	
 	@RequestMapping(value = "/api/exampaper/{id}", method = RequestMethod.GET)
 	public @ResponseBody ExamPaper getExamPaper(@PathVariable("id") int id){
 		ExamPaper paper = examPaperService.getExamPaperById(id);

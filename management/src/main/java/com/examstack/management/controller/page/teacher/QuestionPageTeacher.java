@@ -7,7 +7,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,11 +17,9 @@ import com.examstack.common.domain.question.Field;
 import com.examstack.common.domain.question.Question;
 import com.examstack.common.domain.question.QuestionFilter;
 import com.examstack.common.domain.question.QuestionQueryResult;
-import com.examstack.common.domain.question.Tag;
 import com.examstack.common.util.Page;
 import com.examstack.common.util.PagingUtil;
 import com.examstack.common.util.QuestionAdapter;
-import com.examstack.management.security.UserInfo;
 import com.examstack.management.service.QuestionService;
 
 @Controller

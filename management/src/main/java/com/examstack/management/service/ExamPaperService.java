@@ -3,8 +3,6 @@ package com.examstack.management.service;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.examstack.common.domain.exam.ExamPaper;
 import com.examstack.common.domain.question.QuestionStruts;
 import com.examstack.common.util.Page;

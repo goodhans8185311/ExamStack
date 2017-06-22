@@ -37,7 +37,7 @@ public class MenuPage {
 				.getPrincipal()) ? null : (UserInfo) SecurityContextHolder.getContext().getAuthentication()
 				.getPrincipal();
 
-		String role = userInfo == null ? "ROLE_TEACHER" : userInfo.getRolesName();
+//		String role = userInfo == null ? "ROLE_TEACHER" : userInfo.getRolesName();
 
 		List<MenuItem> list = new ArrayList<MenuItem>();
 
@@ -64,7 +64,7 @@ public class MenuPage {
 		String leftMenuId =request.getParameter("leftMenuId");
 
 		UserInfo userInfo = (UserInfo) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String role = userInfo.getRolesName();
+//		String role = userInfo.getRolesName();
 
 		List<MenuItem> list = new ArrayList<MenuItem>();
 

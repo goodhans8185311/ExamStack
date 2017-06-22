@@ -56,7 +56,6 @@ public class QuestionAction {
 		try {
 			questionService.addQuestion(question);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			message.setResult("error");
 			message.setMessageInfo(e.getClass().getName());
 			e.printStackTrace();
@@ -116,7 +115,6 @@ public class QuestionAction {
 			Question question = questionService.getQuestionDetail(questionId, 0);
 			message.setObject(question);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			message.setResult(e.getCause().getMessage());
 		}

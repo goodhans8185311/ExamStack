@@ -22,6 +22,7 @@ import com.examstack.management.service.SystemService;
 import com.examstack.management.service.UserService;
 
 
+@SuppressWarnings("deprecation")
 @Controller
 public class BasePage {
 

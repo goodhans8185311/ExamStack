@@ -18,6 +18,7 @@ import com.examstack.management.service.TrainingService;
 public class TrainingActionTeacher {
 	@Autowired
 	private TrainingService trainingService;
+	
 	@RequestMapping(value = "teacher/training/add-training", method = RequestMethod.POST)
 	public @ResponseBody Message addTraining(@RequestBody Training training) {
 

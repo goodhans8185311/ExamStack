@@ -3,7 +3,6 @@ package com.examstack.management.controller.page.admin;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,6 @@ import com.examstack.common.domain.question.Tag;
 import com.examstack.common.domain.user.Department;
 import com.examstack.common.util.Page;
 import com.examstack.common.util.PagingUtil;
-import com.examstack.management.security.UserInfo;
 import com.examstack.management.service.QuestionService;
 import com.examstack.management.service.UserService;
 

@@ -52,7 +52,6 @@ public class ExamActionAdmin {
 			exam.setApproved(1);
 			examService.addExam(exam);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -75,7 +74,6 @@ public class ExamActionAdmin {
 			
 			examService.addExamUser(examId, userNameStr, userInfo.getRoleMap());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -95,7 +93,6 @@ public class ExamActionAdmin {
 		try {
 			examService.addGroupUser2Exam(groupIdList, examId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -121,7 +118,6 @@ public class ExamActionAdmin {
 			exam.setExpTime(c.getTime());
 			examService.addExam(exam);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -150,7 +146,6 @@ public class ExamActionAdmin {
 		try {
 			examService.deleteExamById(examId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -170,7 +165,6 @@ public class ExamActionAdmin {
 		try {
 			examService.changeExamStatus(examId, mark);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -190,7 +184,6 @@ public class ExamActionAdmin {
 		try {
 			examService.changeUserExamHistStatus(histId, mark);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -204,7 +197,6 @@ public class ExamActionAdmin {
 		try {
 			examService.deleteUserExamHist(histId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
