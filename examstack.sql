@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50617
+Source Server         : 本地_3306
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : examstack
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2015-12-11 23:47:49
+Date: 2017-06-22 22:18:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `et_comment`
+-- Table structure for et_comment
 -- ----------------------------
 DROP TABLE IF EXISTS `et_comment`;
 CREATE TABLE `et_comment` (
@@ -39,7 +39,7 @@ CREATE TABLE `et_comment` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_department`
+-- Table structure for et_department
 -- ----------------------------
 DROP TABLE IF EXISTS `et_department`;
 CREATE TABLE `et_department` (
@@ -55,7 +55,7 @@ CREATE TABLE `et_department` (
 INSERT INTO `et_department` VALUES ('1', '计划财务部', '计划财务部');
 
 -- ----------------------------
--- Table structure for `et_exam`
+-- Table structure for et_exam
 -- ----------------------------
 DROP TABLE IF EXISTS `et_exam`;
 CREATE TABLE `et_exam` (
@@ -80,7 +80,7 @@ CREATE TABLE `et_exam` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_exam_2_paper`
+-- Table structure for et_exam_2_paper
 -- ----------------------------
 DROP TABLE IF EXISTS `et_exam_2_paper`;
 CREATE TABLE `et_exam_2_paper` (
@@ -97,7 +97,7 @@ CREATE TABLE `et_exam_2_paper` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_exam_paper`
+-- Table structure for et_exam_paper
 -- ----------------------------
 DROP TABLE IF EXISTS `et_exam_paper`;
 CREATE TABLE `et_exam_paper` (
@@ -125,7 +125,7 @@ CREATE TABLE `et_exam_paper` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_field`
+-- Table structure for et_field
 -- ----------------------------
 DROP TABLE IF EXISTS `et_field`;
 CREATE TABLE `et_field` (
@@ -142,7 +142,7 @@ CREATE TABLE `et_field` (
 INSERT INTO `et_field` VALUES ('1', '2015年驾考C1', '2015年驾考C1', '0');
 
 -- ----------------------------
--- Table structure for `et_group`
+-- Table structure for et_group
 -- ----------------------------
 DROP TABLE IF EXISTS `et_group`;
 CREATE TABLE `et_group` (
@@ -161,7 +161,7 @@ CREATE TABLE `et_group` (
 INSERT INTO `et_group` VALUES ('1', '测试组', '2015-10-27 01:17:18', '1', '0');
 
 -- ----------------------------
--- Table structure for `et_knowledge_point`
+-- Table structure for et_knowledge_point
 -- ----------------------------
 DROP TABLE IF EXISTS `et_knowledge_point`;
 CREATE TABLE `et_knowledge_point` (
@@ -185,7 +185,7 @@ INSERT INTO `et_knowledge_point` VALUES ('3', '安全行车、文明驾驶基础
 INSERT INTO `et_knowledge_point` VALUES ('4', '机动车驾驶操作相关基础知识', '1', '', '0');
 
 -- ----------------------------
--- Table structure for `et_menu_item`
+-- Table structure for et_menu_item
 -- ----------------------------
 DROP TABLE IF EXISTS `et_menu_item`;
 CREATE TABLE `et_menu_item` (
@@ -266,7 +266,7 @@ INSERT INTO `et_menu_item` VALUES ('dashboard', '控制面板', 'admin/dashboard
 INSERT INTO `et_menu_item` VALUES ('', '', '', '0', 'ROLE_ADMIN', '', null, '1');
 
 -- ----------------------------
--- Table structure for `et_news`
+-- Table structure for et_news
 -- ----------------------------
 DROP TABLE IF EXISTS `et_news`;
 CREATE TABLE `et_news` (
@@ -278,15 +278,16 @@ CREATE TABLE `et_news` (
   PRIMARY KEY (`news_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `et_news_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `et_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of et_news
 -- ----------------------------
 INSERT INTO `et_news` VALUES ('1', '在线考试系统正式发布', '在线考试系统正式发布', '1', '2015-10-28 01:46:37');
+INSERT INTO `et_news` VALUES ('2', '危化品考试通知', '危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知危化品考试通知', '1', '2017-06-22 20:59:30');
 
 -- ----------------------------
--- Table structure for `et_practice_paper`
+-- Table structure for et_practice_paper
 -- ----------------------------
 DROP TABLE IF EXISTS `et_practice_paper`;
 CREATE TABLE `et_practice_paper` (
@@ -314,7 +315,7 @@ CREATE TABLE `et_practice_paper` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_question`
+-- Table structure for et_question
 -- ----------------------------
 DROP TABLE IF EXISTS `et_question`;
 CREATE TABLE `et_question` (
@@ -347,7 +348,6 @@ CREATE TABLE `et_question` (
 -- ----------------------------
 -- Records of et_question
 -- ----------------------------
-INSERT INTO `et_question` VALUES ('1', '驾驶机动车在道路上违', '{\"title\":\"驾驶机动车在道路上违反道路交通安全法的行为，属于什么行为？\",\"titleImg\":\"\",\"choiceList\":{\"A\":\"违法行为\",\"B\":\"违章行为\",\"C\":\"违规行为\",\"D\":\"过失行为\"},\"choiceImgList\":{}}', '1', null, '0', null, '0', '2015-12-11 22:11:22', 'admin', '0000-00-00 00:00:00', 'A', '2', '1', '1', '1', '“违反道路交通安全法”，违反法律法规即为违法行为。官方已无违章/违规的说法。', '', '', '');
 INSERT INTO `et_question` VALUES ('2', '机动车驾驶人违法驾驶', '{\"title\":\"机动车驾驶人违法驾驶造成重大交通事故构成犯罪的，依法追究什么责任？\",\"titleImg\":\"\",\"choiceList\":{\"A\":\"直接责任\",\"B\":\"经济责任\",\"C\":\"民事责任\",\"D\":\"刑事责任\"},\"choiceImgList\":{}}', '1', null, '0', null, '0', '2015-12-11 23:03:54', 'admin', null, 'D', '2', '1', '1', '1', '《道路交通安全法》第一百零一条：违反道路交通安全法律、法规的规定，发生重大交通事故，构成犯罪的，依法追究刑事责任，并由公安机关交通管理部门吊销机动车驾驶证。', '', '', '');
 INSERT INTO `et_question` VALUES ('3', '机动车驾驶人造成事故', '{\"title\":\"机动车驾驶人造成事故后逃逸构成犯罪的，吊销驾驶证且多长时间不得重新取得驾驶证？\",\"titleImg\":\"\",\"choiceList\":{\"A\":\"终生\",\"B\":\"10年内\",\"C\":\"5年内\",\"D\":\"20年内\"},\"choiceImgList\":{}}', '1', null, '0', null, '0', '2015-12-11 23:05:00', 'admin', null, 'A', '2', '1', '1', '1', '《道路交通安全法》第一百零一条：\n造成交通事故后逃逸的，由公安机关交通管理部门吊销机动车驾驶证，且终生不得重新取得机动车驾驶证。', '', '', '');
 INSERT INTO `et_question` VALUES ('4', '驾驶机动车违反道路交', '{\"title\":\"驾驶机动车违反道路交通安全法律法规发生交通事故属于交通违章行为。\",\"titleImg\":\"\",\"choiceList\":{},\"choiceImgList\":{}}', '3', null, '0', null, '0', '2015-12-11 23:09:10', 'admin', null, 'F', '2', '1', '1', '1', '“违反道路交通安全法”，违反法律法规即为违法行为。现在官方已无违章/违规的说法。', '', '', '');
@@ -396,7 +396,7 @@ INSERT INTO `et_question` VALUES ('47', '前方路口这种信号灯亮', '{\"ti
 INSERT INTO `et_question` VALUES ('49', '前方路口这种信号灯亮', '{\"title\":\"前方路口这种信号灯亮表示什么意思？\",\"titleImg\":\"files\\\\question\\\\admin\\\\1449848817103.jpg\",\"choiceList\":{\"A\":\"加速直行\",\"B\":\"禁止右转\",\"C\":\"加速左转\",\"D\":\"路口警示\"},\"choiceImgList\":{}}', '1', null, '0', null, '0', '2015-12-11 23:47:33', 'admin', null, 'D', '2', '1', '1', '1', '黄灯表示警示，所以是路口警示。', '', '', '');
 
 -- ----------------------------
--- Table structure for `et_question_2_point`
+-- Table structure for et_question_2_point
 -- ----------------------------
 DROP TABLE IF EXISTS `et_question_2_point`;
 CREATE TABLE `et_question_2_point` (
@@ -462,7 +462,7 @@ INSERT INTO `et_question_2_point` VALUES ('47', '47', '1');
 INSERT INTO `et_question_2_point` VALUES ('49', '49', '1');
 
 -- ----------------------------
--- Table structure for `et_question_2_tag`
+-- Table structure for et_question_2_tag
 -- ----------------------------
 DROP TABLE IF EXISTS `et_question_2_tag`;
 CREATE TABLE `et_question_2_tag` (
@@ -483,7 +483,7 @@ CREATE TABLE `et_question_2_tag` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_question_type`
+-- Table structure for et_question_type
 -- ----------------------------
 DROP TABLE IF EXISTS `et_question_type`;
 CREATE TABLE `et_question_type` (
@@ -505,7 +505,7 @@ INSERT INTO `et_question_type` VALUES ('6', '论述题', '1');
 INSERT INTO `et_question_type` VALUES ('7', '分析题', '1');
 
 -- ----------------------------
--- Table structure for `et_reference`
+-- Table structure for et_reference
 -- ----------------------------
 DROP TABLE IF EXISTS `et_reference`;
 CREATE TABLE `et_reference` (
@@ -521,7 +521,7 @@ CREATE TABLE `et_reference` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_role`
+-- Table structure for et_role
 -- ----------------------------
 DROP TABLE IF EXISTS `et_role`;
 CREATE TABLE `et_role` (
@@ -540,7 +540,7 @@ INSERT INTO `et_role` VALUES ('2', 'ROLE_TEACHER', '教师', 'teacher');
 INSERT INTO `et_role` VALUES ('3', 'ROLE_STUDENT', '学员', 'student');
 
 -- ----------------------------
--- Table structure for `et_tag`
+-- Table structure for et_tag
 -- ----------------------------
 DROP TABLE IF EXISTS `et_tag`;
 CREATE TABLE `et_tag` (
@@ -563,7 +563,7 @@ INSERT INTO `et_tag` VALUES ('4', '简单', '2015-08-16 17:46:42', '1', '0', '�
 INSERT INTO `et_tag` VALUES ('6', '送分题', '2015-08-16 22:23:59', '1', '0', '送分题');
 
 -- ----------------------------
--- Table structure for `et_training`
+-- Table structure for et_training
 -- ----------------------------
 DROP TABLE IF EXISTS `et_training`;
 CREATE TABLE `et_training` (
@@ -578,14 +578,15 @@ CREATE TABLE `et_training` (
   `state_time` timestamp NULL DEFAULT NULL,
   `exp_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`training_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of et_training
 -- ----------------------------
+INSERT INTO `et_training` VALUES ('1', '危化品培训', '啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊', '0', '1', '2017-06-22 16:43:12', '1', '0', null, null);
 
 -- ----------------------------
--- Table structure for `et_training_section`
+-- Table structure for et_training_section
 -- ----------------------------
 DROP TABLE IF EXISTS `et_training_section`;
 CREATE TABLE `et_training_section` (
@@ -600,14 +601,15 @@ CREATE TABLE `et_training_section` (
   `file_md5` varchar(200) DEFAULT NULL,
   `file_type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`section_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of et_training_section
 -- ----------------------------
+INSERT INTO `et_training_section` VALUES ('1', '232', '232', '1', '2017-06-22 16:43:38', '1', 'Jcseg-开发帮助文档.pdf', 'files\\training\\admin\\82e2d48c4a5aa2b2c4595237723b4de5.pdf', null, '.pdf');
 
 -- ----------------------------
--- Table structure for `et_user`
+-- Table structure for et_user
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user`;
 CREATE TABLE `et_user` (
@@ -631,16 +633,17 @@ CREATE TABLE `et_user` (
   KEY `idx_user_national_id` (`national_id`),
   KEY `idx_user_email` (`email`),
   KEY `idx_user_phone` (`phone_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=4714 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=4715 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of et_user
 -- ----------------------------
 INSERT INTO `et_user` VALUES ('1', 'admin', 'admin', '000000000000000000', '260acbffd3c30786febc29d7dd71a9880a811e77', '1111@111.com', '18908600000', '2015-09-29 14:38:23', '0', '1', '1', '2015-08-06 11:31:34', '2015-08-06 11:31:50', '', '');
 INSERT INTO `et_user` VALUES ('2', 'student', '学员', '420000000000000000', '3f70af5072e23c9bf59dd1ac1c91f9f8fcc81478', '133@189.cn', '13333333333', '2015-12-11 21:32:07', '1', '1', '0', '2015-08-06 11:31:34', '2015-08-06 11:31:34', '', '');
+INSERT INTO `et_user` VALUES ('4714', 'goodhans', '李大鹏', '130123042040203040', '2c5224e10cc6064b225c20faeb87fc35ba79b4f9', '384711671@qq.com', '18531526655', '2017-06-22 16:39:10', '-1', '1', '0', null, null, null, '');
 
 -- ----------------------------
--- Table structure for `et_user_2_department`
+-- Table structure for et_user_2_department
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_2_department`;
 CREATE TABLE `et_user_2_department` (
@@ -656,9 +659,10 @@ CREATE TABLE `et_user_2_department` (
 -- Records of et_user_2_department
 -- ----------------------------
 INSERT INTO `et_user_2_department` VALUES ('2', '1');
+INSERT INTO `et_user_2_department` VALUES ('4714', '1');
 
 -- ----------------------------
--- Table structure for `et_user_2_group`
+-- Table structure for et_user_2_group
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_2_group`;
 CREATE TABLE `et_user_2_group` (
@@ -679,7 +683,7 @@ CREATE TABLE `et_user_2_group` (
 INSERT INTO `et_user_2_group` VALUES ('1', '2', '2015-12-11 22:31:58', '0');
 
 -- ----------------------------
--- Table structure for `et_user_2_role`
+-- Table structure for et_user_2_role
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_2_role`;
 CREATE TABLE `et_user_2_role` (
@@ -696,9 +700,10 @@ CREATE TABLE `et_user_2_role` (
 -- ----------------------------
 INSERT INTO `et_user_2_role` VALUES ('1', '1');
 INSERT INTO `et_user_2_role` VALUES ('2', '3');
+INSERT INTO `et_user_2_role` VALUES ('4714', '3');
 
 -- ----------------------------
--- Table structure for `et_user_exam_history`
+-- Table structure for et_user_exam_history
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_exam_history`;
 CREATE TABLE `et_user_exam_history` (
@@ -733,7 +738,7 @@ CREATE TABLE `et_user_exam_history` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `et_user_question_history`
+-- Table structure for et_user_question_history
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_question_history`;
 CREATE TABLE `et_user_question_history` (
@@ -752,9 +757,12 @@ CREATE TABLE `et_user_question_history` (
 -- ----------------------------
 -- Records of et_user_question_history
 -- ----------------------------
+INSERT INTO `et_user_question_history` VALUES ('4', '4714', '3', '0', '2017-06-22 16:39:44');
+INSERT INTO `et_user_question_history` VALUES ('7', '4714', '3', '0', '2017-06-22 16:39:38');
+INSERT INTO `et_user_question_history` VALUES ('16', '4714', '3', '1', '2017-06-22 16:39:42');
 
 -- ----------------------------
--- Table structure for `et_user_training_history`
+-- Table structure for et_user_training_history
 -- ----------------------------
 DROP TABLE IF EXISTS `et_user_training_history`;
 CREATE TABLE `et_user_training_history` (
@@ -763,7 +771,7 @@ CREATE TABLE `et_user_training_history` (
   `user_id` int(11) NOT NULL COMMENT '用户ID',
   `duration` float(11,4) NOT NULL DEFAULT '0.0000',
   `process` float(11,2) NOT NULL,
-  `start_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `start_time` timestamp NOT NULL DEFAULT '1980-03-28 10:18:18',
   `last_state_time` timestamp NULL DEFAULT NULL,
   `user_training_detail` mediumtext,
   PRIMARY KEY (`section_id`,`user_id`),
@@ -775,9 +783,10 @@ CREATE TABLE `et_user_training_history` (
 -- ----------------------------
 -- Records of et_user_training_history
 -- ----------------------------
+INSERT INTO `et_user_training_history` VALUES ('1', '1', '4714', '0.0000', '1.00', '2017-06-22 17:41:15', '2017-06-22 17:41:15', null);
 
 -- ----------------------------
--- Table structure for `et_view_type`
+-- Table structure for et_view_type
 -- ----------------------------
 DROP TABLE IF EXISTS `et_view_type`;
 CREATE TABLE `et_view_type` (
@@ -799,7 +808,7 @@ INSERT INTO `et_view_type` VALUES ('7', 'MP4');
 INSERT INTO `et_view_type` VALUES ('8', 'FLV');
 
 -- ----------------------------
--- Table structure for `t_c3p0`
+-- Table structure for t_c3p0
 -- ----------------------------
 DROP TABLE IF EXISTS `t_c3p0`;
 CREATE TABLE `t_c3p0` (
