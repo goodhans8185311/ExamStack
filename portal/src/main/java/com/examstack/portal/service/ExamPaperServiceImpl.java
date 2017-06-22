@@ -14,7 +14,6 @@ public class ExamPaperServiceImpl implements ExamPaperService {
 	
 	@Override
 	public ExamPaper getExamPaperById(int examPaperId) {
-		// TODO Auto-generated method stub
 		return examPaperMapper.getExamPaperById(examPaperId);
 	}
 

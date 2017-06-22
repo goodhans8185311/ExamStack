@@ -45,7 +45,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional
 	public void updateUser(User user, String oldPassword) {
-		// TODO Auto-generated method stub
 		try {
 			userMapper.updateUser(user, oldPassword);
 			userMapper.deleteUser2Dep(user.getUserId());
@@ -58,13 +57,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<Group> getGroupListByUserId(int userId, Page<Group> page) {
-		// TODO Auto-generated method stub
 		return userMapper.getGroupListByUserId(userId, page);
 	}
 
 	@Override
 	public HashMap<String, Role> getRoleMap() {
-		// TODO Auto-generated method stub
 		List<Role> roleList = userMapper.getRoleList();
 		HashMap<String,Role> map = new HashMap<String,Role>();
 		for(Role r : roleList){
@@ -75,41 +72,35 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void changeUserStatus(List<Integer> idList,boolean enabled) {
-		// TODO Auto-generated method stub
 		userMapper.changeUserStatus(idList, enabled);
 	}
 	
 	@Override
 	public void addUserGroup(int userId, int groupId) {
-		// TODO Auto-generated method stub
 		userMapper.addUserGroup(userId, groupId);
 	}
 
 
 	@Override
 	public void deleteUserGroup(int userId, int groupId, int managerId) {
-		// TODO Auto-generated method stub
 		userMapper.deleteUserGroup(userId, groupId, managerId);
 	}
 
 
 	@Override
 	public List<Department> getDepList(Page<Department> page) {
-		// TODO Auto-generated method stub
 		return userMapper.getDepList(page);
 	}
 
 
 	@Override
 	public User getUserByName(String userName) {
-		// TODO Auto-generated method stub
 		return userMapper.getUserByName(userName);
 	}
 
 
 	@Override
 	public void updateUserPwd(User user, String oldPwd) {
-		// TODO Auto-generated method stub
 		userMapper.updateUser(user, oldPwd);
 	}
 }

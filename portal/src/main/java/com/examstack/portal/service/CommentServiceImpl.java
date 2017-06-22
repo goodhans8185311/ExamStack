@@ -17,13 +17,11 @@ public class CommentServiceImpl implements CommentService {
 	private CommentMapper commentMapper;
 	@Override
 	public List<Comment> getCommentByTypeAndReferId(int commentType,int referId,int indexId,Page<Comment> page) {
-		// TODO Auto-generated method stub
 		return commentMapper.getCommentByTypeAndReferId(commentType, referId, indexId, page);
 	}
 	@Override
 	@Transactional
 	public void addComment(Comment comment) {
-		// TODO Auto-generated method stub
 		try{
 			Object index = commentMapper.getMaxCommentIndexByTypeAndReferId(comment.getCommentType(), comment.getReferId());
 			int i = 0;

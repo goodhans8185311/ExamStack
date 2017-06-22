@@ -29,7 +29,7 @@ public class ExamAction {
 	
 	@Autowired
 	private ExamService examService;
-	
+	// RabbitMQ Client
 	@Autowired
 	private org.springframework.amqp.core.AmqpTemplate qmqpTemplate;
 	/**
@@ -59,7 +59,6 @@ public class ExamAction {
 			//申请考试默认未审核
 			examService.addUserExamHist(userInfo.getUserid(), examId, exam.getExamPaperId(),0);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			msg.setResult(e.getMessage());
 			e.printStackTrace();
 		}
@@ -86,6 +85,11 @@ public class ExamAction {
 		return exam;
 	}
 	
+	/**
+	 * 学员提交考试
+	 * @param answerSheet
+	 * @return
+	 */
 	@RequestMapping(value = "/student/exam-submit", method = RequestMethod.POST)
 	public @ResponseBody Message finishExam(@RequestBody AnswerSheet answerSheet) {
 
@@ -105,14 +109,22 @@ public class ExamAction {
 		return message;
 	}
 	
-	
+	/**
+	 * 测试答题
+	 * @param model
+	 * @return
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "addAnswerSheet4Test", method = RequestMethod.GET)
 	public @ResponseBody Message addAnswerSheet4Test(Model model) throws JsonProcessingException, IOException {
 		Message msg = new Message();
+		
 		AnswerSheet as = new AnswerSheet();
 		as.setExamPaperId(2);
 		ObjectMapper om = new ObjectMapper();
 		qmqpTemplate.convertAndSend(Constants.ANSWERSHEET_DATA_QUEUE, om.writeValueAsBytes(as));
+	
 		return msg;
 	}
 }

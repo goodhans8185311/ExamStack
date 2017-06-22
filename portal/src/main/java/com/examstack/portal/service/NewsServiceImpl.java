@@ -16,13 +16,11 @@ public class NewsServiceImpl implements NewsService {
 	private NewsMapper newsMapper;
 	@Override
 	public List<News> getNewsList(Page<News> page) {
-		// TODO Auto-generated method stub
 		return newsMapper.getNewsList(page);
 	}
 
 	@Override
 	public News getNewsById(int newsId) {
-		// TODO Auto-generated method stub
 		return newsMapper.getNewsById(newsId);
 	}
 

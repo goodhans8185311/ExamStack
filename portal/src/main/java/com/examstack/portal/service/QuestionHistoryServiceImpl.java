@@ -23,7 +23,6 @@ public class QuestionHistoryServiceImpl implements QuestionHistoryService {
 	}
 	@Override
 	public void addUserQuestionHist(UserQuestionHistory... history) {
-		// TODO Auto-generated method stub
 		List<UserQuestionHistory> historyList = new ArrayList<UserQuestionHistory>();
 		for(UserQuestionHistory h : history){
 			historyList.add(h);
@@ -32,7 +31,6 @@ public class QuestionHistoryServiceImpl implements QuestionHistoryService {
 	}
 	@Override
 	public Map<Integer, List<UserQuestionHistory>> getUserQuestionHist(int userId, int fieldId) {
-		// TODO Auto-generated method stub
 		
 		List<UserQuestionHistory> histList = questionHistoryMapper.getUserQuestionHist(userId, fieldId);
 		Map<Integer, List<UserQuestionHistory>> map = new HashMap<Integer, List<UserQuestionHistory>>();
@@ -49,7 +47,6 @@ public class QuestionHistoryServiceImpl implements QuestionHistoryService {
 	
 	@Override
 	public Map<Integer, QuestionStatistic> getQuestionHistStaticByFieldId(int fieldId, int userId) {
-		// TODO Auto-generated method stub
 		List<QuestionStatistic> statisticList = questionHistoryMapper.getQuestionHistStaticByFieldId(fieldId,userId);
 		Map<Integer, QuestionStatistic> map = new HashMap<Integer, QuestionStatistic>();
 		for(QuestionStatistic statistic : statisticList){
@@ -60,7 +57,6 @@ public class QuestionHistoryServiceImpl implements QuestionHistoryService {
 	}
 	@Override
 	public Map<Integer, Map<Integer, QuestionStatistic>> getTypeQuestionHistStaticByFieldId(int fieldId, int userId) {
-		// TODO Auto-generated method stub
 		List<QuestionStatistic> statisticList = questionHistoryMapper.getTypeQuestionHistStaticByFieldId(fieldId,userId);
 		Map<Integer, Map<Integer, QuestionStatistic>> map = new HashMap<Integer, Map<Integer, QuestionStatistic>>();
 		for(QuestionStatistic statistic : statisticList){

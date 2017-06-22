@@ -60,7 +60,6 @@ public class ExamServiceImpl implements ExamService {
 			examMapper.addUserExamHist(history);
 			return history.getHistId();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getCause());
 		}
 	}
@@ -90,7 +89,6 @@ public class ExamServiceImpl implements ExamService {
 	}
 	@Override
 	public List<ExamHistory> getUserExamHistByUserId(int userId, Page<ExamHistory> page, int... typeIdList) {
-		// TODO Auto-generated method stub
 		if(typeIdList != null && typeIdList.length == 0)
 			typeIdList = null;
 		return examMapper.getUserExamHistByUserId(userId, typeIdList, page);
