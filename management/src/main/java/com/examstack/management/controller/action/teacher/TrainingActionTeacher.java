@@ -28,7 +28,6 @@ public class TrainingActionTeacher {
 			training.setCreatorId(userInfo.getUserid());
 			trainingService.addTraining(training);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -45,7 +44,6 @@ public class TrainingActionTeacher {
 			section.setUserId(userInfo.getUserid());
 			trainingService.addTrainingSection(section);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}

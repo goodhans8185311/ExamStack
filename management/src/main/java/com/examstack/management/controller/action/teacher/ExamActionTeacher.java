@@ -1,6 +1,5 @@
 package com.examstack.management.controller.action.teacher;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -8,14 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.examstack.common.Constants;
 import com.examstack.common.domain.exam.AnswerSheet;
 import com.examstack.common.domain.exam.AnswerSheetItem;
 import com.examstack.common.domain.exam.Exam;
@@ -23,8 +20,6 @@ import com.examstack.common.domain.exam.ExamHistory;
 import com.examstack.common.domain.exam.Message;
 import com.examstack.management.security.UserInfo;
 import com.examstack.management.service.ExamService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 @Controller
@@ -52,7 +47,6 @@ public class ExamActionTeacher {
 			exam.setApproved(0);
 			examService.addExam(exam);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -75,7 +69,6 @@ public class ExamActionTeacher {
 			
 			examService.addExamUser(examId, userNameStr, userInfo.getRoleMap());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -95,7 +88,6 @@ public class ExamActionTeacher {
 		try {
 			examService.addGroupUser2Exam(groupIdList, examId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -121,7 +113,6 @@ public class ExamActionTeacher {
 			exam.setExpTime(c.getTime());
 			examService.addExam(exam);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getClass().getName());
 		}
@@ -140,7 +131,6 @@ public class ExamActionTeacher {
 		try {
 			examService.deleteExamById(examId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -160,7 +150,6 @@ public class ExamActionTeacher {
 		try {
 			examService.changeExamStatus(examId, mark);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -180,7 +169,6 @@ public class ExamActionTeacher {
 		try {
 			examService.changeUserExamHistStatus(histId, mark);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}
@@ -194,7 +182,6 @@ public class ExamActionTeacher {
 		try {
 			examService.deleteUserExamHist(histId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			msg.setResult(e.getMessage());
 		}

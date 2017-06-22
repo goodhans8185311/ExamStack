@@ -21,8 +21,6 @@ public class DashBoardPageTeacher {
 	public String dashboardPage(Model model) {
 		
 		List<Field> fieldList = questionService.getAllField(null);
-		
-		
 		model.addAttribute("fieldList", fieldList);
 		return "dashboard";
 	}
