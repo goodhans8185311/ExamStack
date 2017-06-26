@@ -14,7 +14,11 @@ import com.examstack.common.domain.exam.AnswerSheet;
 import com.examstack.common.domain.exam.AnswerSheetItem;
 import com.examstack.common.domain.exam.ExamPaper;
 import com.google.gson.Gson;
-
+/**
+ * 分数计算服务
+ * @author hans
+ *
+ */
 @Service
 @Scope("prototype")
 public class ScoreCalcuService {
@@ -71,6 +75,11 @@ public class ScoreCalcuService {
 		}
 	}
 
+	/**
+	 * 
+	 * @param examaperId
+	 * @return
+	 */
 	private ExamPaper getExamPaper(int examaperId) {
 		ExamPaper examPaper = null;
 		try {

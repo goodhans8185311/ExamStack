@@ -3,6 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.examstack.management.persistence.ExamPaperMapper">
+
 	<select id="getExamPaperList" resultType="com.examstack.common.domain.exam.ExamPaper">
 		select
 		id,name,content,duration,pass_point,total_point,status,summary,is_visible,answer_sheet,group_id,
