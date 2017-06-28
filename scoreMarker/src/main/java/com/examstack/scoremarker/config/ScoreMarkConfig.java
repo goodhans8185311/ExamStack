@@ -24,7 +24,7 @@ import com.rabbitmq.client.QueueingConsumer;
 
 /**
  * 
- * @author Ocelot
+ * @author hans
  *
  */
 @Configuration
@@ -44,19 +44,27 @@ public class ScoreMarkConfig {
 	
 //	private HashMap<String,ExamPaper> examPapersMap = new HashMap<String,ExamPaper>();;
 
+	/**
+	 * rabbitMQ 消费者
+	 * @return
+	 */
 	@Bean
 	QueueingConsumer queueingConsumer() throws IOException {
-		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost(messageQueueHostname);
+		LOGGER.info("##############################################   初始化RabbitMQ Consumer 消费者        #####################################################");
+		ConnectionFactory factory = new ConnectionFactory();//rabbitMQ 连接工厂
+		factory.setHost(messageQueueHostname); //rabbitmq.host
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 		channel.queueDeclare(Constants.ANSWERSHEET_DATA_QUEUE, true, false, false, null);
 		QueueingConsumer consumer = new QueueingConsumer(channel);
 		channel.basicConsume(Constants.ANSWERSHEET_DATA_QUEUE, true, consumer);
 		return consumer;
-
 	}
 
+	/**
+	 * 配置文件读取
+	 * @return
+	 */
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		String propertyFilePath = Constants.CONFIG_PATH + File.separator 	+ "config" + File.separator + "scoremaker.properties";

@@ -1,12 +1,13 @@
 package com.examstack.common.domain.exam;
 
+
 public class AnswerSheetItem {
-	private float point;
-	private int questionTypeId;
-	private String answer;
-	private int questionId;
-	private String comment;
-	private boolean right;
+	private float point;        //分数
+	private int questionTypeId; //试题类型
+	private String answer;  //答案
+	private int questionId;  //试题id
+	private String comment;  //评论
+	private boolean right;   //是否正确
 
 	public boolean isRight() {
 		return right;

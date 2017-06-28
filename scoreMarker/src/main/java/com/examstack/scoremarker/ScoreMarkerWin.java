@@ -15,6 +15,7 @@ import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.ShutdownSignalException;
 
 @Component
+@SuppressWarnings("unused")
 public class ScoreMarkerWin {
 
 	private static boolean stop = false;
@@ -25,10 +26,23 @@ public class ScoreMarkerWin {
 	private ScoreCalcuService scoreCalcuService;
 	@Autowired
 	private ObjectMapper mapper;
+	
 	private static boolean waitingForMessage = false;
 	
 	private static final Logger LOGGER = Logger.getLogger(ScoreMarkerWin.class);
-	
+    
+    public static void main(String[] args) {
+    	ScoreMarkerWin scoreMarkerWin = new ScoreMarkerWin();
+    	scoreMarkerWin.init();//
+    	scoreMarkerWin.run();
+    }
+	/**
+	 * 初始化Spring上下文，实例化类
+	 * 注册读取配置信息类
+	 * 
+	 * 
+	 */
+	@SuppressWarnings("resource")
 	public void init() {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
@@ -40,20 +54,16 @@ public class ScoreMarkerWin {
 		LOGGER.info("ScoreMarker daemon init done.");
 	}
 	
-	public ScoreMarkerWin(){
-		
-	}
+	
+	
     public static void start(String[] args) {
     	
-
 		ScoreMarkerWin win = new ScoreMarkerWin();
     	win.init();
         System.out.println("start");
         Thread thread = new Thread(){
-
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				win.run();
 			}
         };
@@ -66,11 +76,7 @@ public class ScoreMarkerWin {
         System.exit(0);
     }
  
-    public static void main(String[] args) {
-    	ScoreMarkerWin scoreMarkerWin = new ScoreMarkerWin();
-    	scoreMarkerWin.init();
-    	scoreMarkerWin.run();
-    }
+    
     
     protected void run() {
     	while(!stop){
@@ -81,6 +87,7 @@ public class ScoreMarkerWin {
     			waitingForMessage = false;
     			AnswerSheet answerSheet = mapper.readValue(delivery.getBody(),
     					AnswerSheet.class);
+    			//根据答题卡计算学员分数
     			scoreCalcuService.calcuScore(answerSheet);
     			
     		} catch (ShutdownSignalException e) {
