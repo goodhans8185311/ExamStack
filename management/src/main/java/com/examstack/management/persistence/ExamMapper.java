@@ -24,7 +24,7 @@ public interface ExamMapper {
 	public void addUserExamHist(ExamHistory examHistory);
 	
 	/**
-	 * 获取试卷清单
+	 * 获取试卷清单分析
 	 * @param idList 类型id
 	 * @param page
 	 * @return
