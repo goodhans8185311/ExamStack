@@ -1,7 +1,11 @@
 package com.examstack.common.domain.exam;
 
 import java.util.Date;
-
+/**
+ * 学员做题历史记录
+ * @author LDP
+ *
+ */
 public class UserQuestionHistory {
 
 	private int questionId;

@@ -47,8 +47,7 @@ public class Paper {
 	private HashMap<Integer, Integer> questionTypeNum;
 	// 每种题型的分数
 	private HashMap<Integer, Float> questionTypePoint;
-	//知识点字典
-	private HashMap<Integer,String> knowledgeMap;
+
 	//试题类型字典
 	private HashMap<Integer,String> typeMap;
 	
@@ -80,7 +79,6 @@ public class Paper {
 		this.questionTypeNum = questionTypeNum;
 		this.questionTypePoint = questionTypePoint;
 		this.knowledgePointRate = knowledgePointRate;
-		this.knowledgeMap = knowledgeMap;
 		this.typeMap = typeMap;
 	}
 

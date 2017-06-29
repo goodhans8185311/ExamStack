@@ -7,16 +7,16 @@ import java.util.List;
 public class Exam implements Serializable {
 
 	private static final long serialVersionUID = -1595051130848974880L;
-	private int examId;
-	private String examName;
-	private String examSubscribe;
-	private int examType;
-	private Date createTime;
-	private Date effTime;
-	private Date expTime;
-	private int examPaperId;
-	private String examPaperName;
-	private List<Integer> groupIdList;
+	private int examId;         //考试id
+	private String examName;    //考试名称
+	private String examSubscribe; //考试订阅者
+	private int examType;      //考试类型
+	private Date createTime;  //创建时间
+	private Date effTime;     //有效时间开始
+	private Date expTime;     //结束时间
+	private int examPaperId;  //考试所用试卷id
+	private String examPaperName; //考试所用试卷名称
+	private List<Integer> groupIdList; 
 	private int creator;
 	private String creatorId;
 	//准考证号

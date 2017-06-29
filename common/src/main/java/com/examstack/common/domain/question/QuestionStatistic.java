@@ -1,5 +1,9 @@
 package com.examstack.common.domain.question;
-
+/**
+ * 试题分析
+ * @author LDP
+ *
+ */
 public class QuestionStatistic {
 
 	private int fieldId;
@@ -11,6 +15,8 @@ public class QuestionStatistic {
 	private int amount;
 	private int rightAmount;
 	private int wrongAmount;
+	
+	
 	public int getQuestionTypeId() {
 		return questionTypeId;
 	}

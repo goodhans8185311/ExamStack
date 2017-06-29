@@ -1,7 +1,6 @@
 package com.examstack.common.domain.exam;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class PaperCreatorParam {
 

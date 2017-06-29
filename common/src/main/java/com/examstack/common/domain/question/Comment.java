@@ -2,7 +2,11 @@ package com.examstack.common.domain.question;
 
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ * 试题评论
+ * @author LDP
+ *
+ */
 public class Comment implements Serializable  {
 	
 	private static final long serialVersionUID = 304471288989898758L;

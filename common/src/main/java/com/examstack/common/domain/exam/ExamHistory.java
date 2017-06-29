@@ -1,33 +1,37 @@
 package com.examstack.common.domain.exam;
 
 import java.util.Date;
-
+/**
+ * 考试历史纪录
+ * @author LDP
+ *
+ */
 public class ExamHistory {
 
-	private int histId;
-	private int userId;
-	private String userName;
-	private String trueName;
-	private Date startTime;
-	private int examId;
-	private String examName;
-	private int examType;
-	private boolean enabled;
-	private int examPaperId;
-	private float point;
-	private String seriNo;
-	private String content;
-	private Date createTime;
+	private int histId;  //历史纪录id
+	private int userId;  //学员id
+	private String userName; //学员名称
+	private String trueName; //真实姓名
+	private Date startTime; //开始时间
+	private int examId;  //考试id
+	private String examName; //考试名称
+	private int examType;  //考试类型
+	private boolean enabled;  //是否发布
+	private int examPaperId;  //该次考试使用的试卷id
+	private float point;   //考生得分
+	private String seriNo;  // 准考证号码
+	private String content; //
+	private Date createTime; //该条记录创建时间
 	private String answerSheet;
-	private int duration;
-	private float pointGet;
-	private Date submitTime;
+	private int duration;     //考试用时
+	private float pointGet;   //得分
+	private Date submitTime;  // 提交分数
 	//0 未审核 1 通过 2 未通过
 	private int approved;
-	private Date verifyTime;
-	private float passPoint;
+	private Date verifyTime;  //查验时间
+	private float passPoint;  //及格分数
 	private String nationalId;
-	private String depName;
+	private String depName;  // 部门名称
 	
 	public String getNationalId() {
 		return nationalId;

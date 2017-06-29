@@ -1,5 +1,9 @@
 package com.examstack.common.domain.training;
-
+/**
+ * 学员与此次培训
+ * @author LDP
+ *
+ */
 public class UserTraining extends Training {
 
 	private int userId;

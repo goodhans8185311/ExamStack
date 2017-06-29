@@ -7,7 +7,7 @@ package com.examstack.common.domain.question;
  */
 public class KnowledgePoint {
 
-	private int pointId;
+	private int pointId;    
 	private String pointName;
 	private int fieldId;
 	private String fieldName;

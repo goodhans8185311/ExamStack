@@ -15,7 +15,7 @@ public class AnswerSheet {
 	private List<AnswerSheetItem> answerSheetItems;  //答题队列
 	private float pointMax;
 	private float pointRaw ;
-	private Date startTime;
+	private Date startTime;   //答题日期时间，提交
 
 	public Date getStartTime() {
 		return startTime;

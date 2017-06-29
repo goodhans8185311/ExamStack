@@ -1,20 +1,25 @@
 package com.examstack.common.domain.training;
 
 import java.util.Date;
-
+/**
+ * 培训数据对象
+ * @author LDP
+ *
+ */
 public class Training {
 
-	private int trainingId;
-	private String trainingName;
-	private String trainingDesc;
-	private Date createTime;
-	private int status;
-	private int creatorId;
-	private int fieldId;
-	private String creatorName;
-	private Date stateTime;
-	private Date expTime;
+	private int trainingId;   //培训id
+	private String trainingName; //培训名称
+	private String trainingDesc; //培训描述
+	private int status;    //状态 '0:未发布；1：发布；2：失效'
+	private int fieldId;   //
+	private int creatorId; // 创建者id
+	private String creatorName; //创建者姓名
+	private Date stateTime;   //
+	private Date expTime;    //过期时间
 	private boolean privatee;
+	private Date createTime; //创建时间
+	
 	public boolean isPrivatee() {
 		return privatee;
 	}

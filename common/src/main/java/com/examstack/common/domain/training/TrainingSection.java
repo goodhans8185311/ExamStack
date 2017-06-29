@@ -1,7 +1,11 @@
 package com.examstack.common.domain.training;
 
 import java.util.Date;
-
+/**
+ * 培训文件附件数据对象
+ * @author LDP
+ *
+ */
 public class TrainingSection {
 
 	private int sectionId;

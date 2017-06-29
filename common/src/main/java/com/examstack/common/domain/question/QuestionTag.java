@@ -2,18 +2,19 @@ package com.examstack.common.domain.question;
 
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ * 试题与标签对应mapping 数据对象
+ * @author LDP
+ *
+ */
+@SuppressWarnings("serial")
 public class QuestionTag implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3291344057024079156L;
-	private int questionTagId;
-	private int questionId;
-	private int tagId;
-	private String tagName;
-	private int creator;
+	private int questionTagId;  //试题与标签对应id
+	private int questionId;    //试题id
+	private int tagId;     //标签id
+	private String tagName;  //标签名称
+	private int creator;  
 	private boolean privatee;
 	private Date createtime;
 	public int getQuestionTagId() {

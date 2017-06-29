@@ -2,7 +2,11 @@ package com.examstack.common.domain.exam;
 
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ * 
+ * @author LDP
+ *
+ */
 public class ExamPaper implements Serializable {
 
 	private static final long serialVersionUID = -3878176097815638534L;
