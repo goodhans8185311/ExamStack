@@ -13,6 +13,7 @@ public class QuestionQueryResult {
 	private float questionPoint;
 	private String examingPoint;
 	private int knowledgePointId;
+	
 	public int getKnowledgePointId() {
 		return knowledgePointId;
 	}

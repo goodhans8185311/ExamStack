@@ -1,7 +1,16 @@
 package com.examstack.common.domain.question;
 
 public class QuestionImproveResult {
-
+	
+	private int questionPointId;
+	private String questionPointName;
+	private int questionTypeId;
+	private String questionTypeName;
+	private int amount;
+	private int rightTimes;  //对的次数
+	private int wrongTimes;  //错的次数
+	
+	
 	public int getRightTimes() {
 		return rightTimes;
 	}
@@ -44,12 +53,6 @@ public class QuestionImproveResult {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	private int questionPointId;
-	private String questionPointName;
-	private int questionTypeId;
-	private String questionTypeName;
-	private int amount;
-	private int rightTimes;
-	private int wrongTimes;
+
 	
 }
