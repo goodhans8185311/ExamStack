@@ -42,3 +42,13 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2017-06-26 16:36:36,560 INFO  com.examstack.scoremarker.ScoreMarkerWin:40  -> ScoreMarker daemon init done.
 2017-06-26 16:36:36,560 INFO  com.examstack.scoremarker.ScoreMarkerWin:78  -> scoreMaker checking next delivery from message queue
 2017-06-26 16:40:36,664 INFO  com.examstack.scoremarker.ScoreMarkerWin:78  -> scoreMaker checking next delivery from message queue
+2017-06-30 09:39:04,949 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5c8da962: startup date [Fri Jun 30 09:39:04 CST 2017]; root of context hierarchy
+2017-06-30 09:39:05,118 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [F:\examstackworkspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2017-06-30 09:39:05,173 INFO  com.examstack.scoremarker.config.ScoreMarkConfig:53  -> ##############################################   初始化RabbitMQ Consumer 消费者        #####################################################
+2017-06-30 09:39:05,548 INFO  com.examstack.scoremarker.ScoreMarkerWin:54  -> ScoreMarker daemon init done.
+2017-06-30 09:39:05,548 INFO  com.examstack.scoremarker.ScoreMarkerWin:84  -> scoreMaker checking next delivery from message queue
+2017-06-30 09:54:45,514 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5c8da962: startup date [Fri Jun 30 09:54:45 CST 2017]; root of context hierarchy
+2017-06-30 09:54:45,689 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [F:\examstackworkspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2017-06-30 09:54:45,743 INFO  com.examstack.scoremarker.config.ScoreMarkConfig:53  -> ##############################################   初始化RabbitMQ Consumer 消费者        #####################################################
+2017-06-30 09:54:46,048 INFO  com.examstack.scoremarker.ScoreMarkerWin:58  -> ScoreMarker daemon init done.
+2017-06-30 09:54:46,049 INFO  com.examstack.scoremarker.ScoreMarkerWin:65  -> scoreMaker checking next delivery from message queue

@@ -13,7 +13,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.ConsumerCancelledException;
 import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.ShutdownSignalException;
-
+/**
+ * 引入RabbitMq，用于接受用户提交的答题卡，通过ScoreMarker从消息队列获取答题卡并交卷，减小大量用户提交导致的服务器故障几率。
+ * @author LDP
+ *
+ */
 @Component
 @SuppressWarnings("unused")
 public class ScoreMarkerWin {
@@ -33,7 +37,7 @@ public class ScoreMarkerWin {
     
     public static void main(String[] args) {
     	ScoreMarkerWin scoreMarkerWin = new ScoreMarkerWin();
-    	scoreMarkerWin.init();//
+    	scoreMarkerWin.init();//初始化
     	scoreMarkerWin.run();
     }
 	/**
@@ -53,28 +57,26 @@ public class ScoreMarkerWin {
 		mapper = context.getBean(ObjectMapper.class);
 		LOGGER.info("ScoreMarker daemon init done.");
 	}
-	
-	
-	
-    public static void start(String[] args) {
-    	
-		ScoreMarkerWin win = new ScoreMarkerWin();
-    	win.init();
-        System.out.println("start");
-        Thread thread = new Thread(){
-			@Override
-			public void run() {
-				win.run();
-			}
-        };
-        thread.start();
-    }
- 
-    public static void stop(String[] args) {
-        System.out.println("stop");
-        stop = true;
-        System.exit(0);
-    }
+
+//    public static void start(String[] args) {
+//    	
+//		ScoreMarkerWin win = new ScoreMarkerWin();
+//    	win.init();
+//        System.out.println("start");
+//        Thread thread = new Thread(){
+//			@Override
+//			public void run() {
+//				win.run();
+//			}
+//        };
+//        thread.start();
+//    }
+// 
+//    public static void stop(String[] args) {
+//        System.out.println("stop");
+//        stop = true;
+//        System.exit(0);
+//    }
  
     
     
@@ -105,7 +107,5 @@ public class ScoreMarkerWin {
     			LOGGER.error("scoreMaker received exception", e);
     		}
     	}
-    	
-
 	}
 }
