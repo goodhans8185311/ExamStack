@@ -28,7 +28,7 @@ public interface TrainingMapper {
 	public void addTraining(Training training);
 	
 	/**
-	 * 添加章节
+	 * 添加培训章节
 	 * @param section
 	 */
 	public void addTrainingSection(TrainingSection section);

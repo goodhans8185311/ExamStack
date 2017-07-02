@@ -1,5 +1,9 @@
 package com.examstack.common.domain.question;
-
+/**
+ * 分数分析
+ * @author LDP
+ *
+ */
 public class PointStatistic {
 
 	private int fieldId;
@@ -7,6 +11,7 @@ public class PointStatistic {
 	private int pointId;
 	private String pointName;
 	private int amount;
+	
 	public int getFieldId() {
 		return fieldId;
 	}

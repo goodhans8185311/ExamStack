@@ -113,16 +113,15 @@ public class ExamAction {
 	 * 测试答题
 	 * @param model
 	 * @return
-	 * @throws JsonProcessingException
-	 * @throws IOException
 	 */
 	@RequestMapping(value = "addAnswerSheet4Test", method = RequestMethod.GET)
 	public @ResponseBody Message addAnswerSheet4Test(Model model) throws JsonProcessingException, IOException {
-		Message msg = new Message();
 		
+		Message msg = new Message();
 		AnswerSheet as = new AnswerSheet();
 		as.setExamPaperId(2);
 		ObjectMapper om = new ObjectMapper();
+		//把考生的答题对象存储在RabbitMQ的队列中
 		qmqpTemplate.convertAndSend(Constants.ANSWERSHEET_DATA_QUEUE, om.writeValueAsBytes(as));
 	
 		return msg;

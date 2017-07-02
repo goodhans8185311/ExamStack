@@ -12,6 +12,7 @@ public class Group implements Serializable {
 	private String groupName;
 	private int userId;
 	private boolean defaultt;
+	
 	public boolean isDefaultt() {
 		return defaultt;
 	}
