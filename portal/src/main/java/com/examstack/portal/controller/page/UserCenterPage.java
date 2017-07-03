@@ -28,8 +28,6 @@ import com.examstack.portal.service.QuestionService;
 import com.google.gson.Gson;
 
 /**
- * @author Ocelot
- * @date 2014年7月29日 下午4:31:03
  */
 @Controller
 public class UserCenterPage {

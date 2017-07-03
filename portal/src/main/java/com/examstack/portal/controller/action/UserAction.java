@@ -2,6 +2,7 @@ package com.examstack.portal.controller.action;
 
 import java.util.Date;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,7 +22,7 @@ import com.examstack.portal.service.UserService;
 public class UserAction {
 	@Autowired
 	private UserService userService;
-
+	private static final Logger LOGGER = Logger.getLogger(UserAction.class);
 	/**
 	 * 添加用户
 	 * 
@@ -32,20 +33,20 @@ public class UserAction {
 	 */
 	@RequestMapping(value = { "/add-user" }, method = RequestMethod.POST)
 	public @ResponseBody Message addUser(@RequestBody User user) {
-		user.setCreateTime(new Date());
 		
 		String password = user.getPassword() + "{" + user.getUserName().toLowerCase() + "}";
 		PasswordEncoder passwordEncoder = new StandardPasswordEncoderForSha1();
 		String resultPassword = passwordEncoder.encode(password);
 		user.setPassword(resultPassword);
 		user.setEnabled(true);
-		user.setCreateBy(-1);
+		user.setCreateBy(-1); //用户自己注册
 		user.setUserName(user.getUserName().toLowerCase());
+		user.setCreateTime(new Date());
 		Message message = new Message();
+		LOGGER.info("user name = " + user.getUserName() + " password = " + user.getPassword());
 		try {
 			userService.addUser(user, "ROLE_STUDENT", 0, userService.getRoleMap());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 
 			if(e.getMessage().contains(user.getUserName())){
 				message.setResult("duplicate-username");
