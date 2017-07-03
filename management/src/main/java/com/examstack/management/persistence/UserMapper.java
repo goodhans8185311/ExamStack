@@ -45,8 +45,6 @@ public interface UserMapper {
 
 	/**
 	 * 给用户授权一种角色
-	 * 
-	 * 
 	 * @param userId
 	 *            roleId
 	 */

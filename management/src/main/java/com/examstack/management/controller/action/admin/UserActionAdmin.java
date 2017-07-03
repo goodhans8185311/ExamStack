@@ -33,7 +33,7 @@ public class UserActionAdmin {
 	 * 
 	 * @param user
 	 * @param groupId
-	 *            如果添加的用户为学员，必须指定groupId。如果添加的用户为教师，则groupId为任意数字
+	 *    如果添加的用户为学员，必须指定groupId。如果添加的用户为教师，则groupId为任意数字
 	 * @return
 	 */
 	@RequestMapping(value = { "/admin/add-user-{authority}-{groupId}" }, method = RequestMethod.POST)
@@ -52,7 +52,6 @@ public class UserActionAdmin {
 		try {
 			userService.addUser(user, authority, groupId, userInfo.getRoleMap());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 
 			if(e.getMessage().contains(user.getUserName())){
 				message.setResult("duplicate-username");
