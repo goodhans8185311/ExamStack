@@ -17,7 +17,12 @@ import com.examstack.common.domain.exam.Message;
 import com.examstack.management.service.ExamPaperService;
 import com.examstack.management.service.ExamService;
 import com.google.gson.Gson;
-
+/**
+ * ScoreMarker 通信类
+ * 
+ * @author LDP
+ *
+ */
 @Controller
 public class ExamAction {
 	@Autowired
@@ -25,13 +30,22 @@ public class ExamAction {
 	@Autowired
 	private ExamService examService;
 	
-	
+	/**
+	 * ScoreMarker 根据exampaperid 获取 试卷信息对象
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/api/exampaper/{id}", method = RequestMethod.GET)
 	public @ResponseBody ExamPaper getExamPaper(@PathVariable("id") int id){
 		ExamPaper paper = examPaperService.getExamPaperById(id);
 		return paper;
 	}
 	
+	/**
+	 * ScoreMarker模块 计算完试卷分数后，post给Management模块存储数据库
+	 * @param answerSheet
+	 * @return
+	 */
 	@RequestMapping(value = "/api/answersheet", method = RequestMethod.POST)
 	public @ResponseBody Message submitAnswerSheet(@RequestBody AnswerSheet answerSheet){
 
@@ -47,7 +61,6 @@ public class ExamAction {
 		}
 		Gson gson = new Gson();		
 		examService.updateUserExamHist(answerSheet, gson.toJson(answerSheet),approved);
-		
 		return new Message();
 	}
 	

@@ -40,7 +40,7 @@ public class ScoreCalcuService {
 	private static final Logger LOGGER = Logger.getLogger(ScoreCalcuService.class);
 
 	public void calcuScore(AnswerSheet as) {
-		System.out.println("answerSheet is calculating..." + as);
+		System.out.println("########################################   AnswerSheet is calculating... " + as +"  #######################################################" );
 
 		ExamPaper examPaper = Examapapers.get(as.getExamPaperId());
 
@@ -63,10 +63,16 @@ public class ScoreCalcuService {
 				item.setRight(true);
 			}
 		}
+		// TODO 把计算完得分的 AnswerSheet对象 回传给Management
 		this.postAnswerSheet(answerSheetPostUri, as);
-		System.out.println("answerSheet has been post to" + answerSheetPostUri);
+		System.out.println("##################################################  AnswerSheet has been post to" + answerSheetPostUri + " ##################################################");
 	}
 
+	/**
+	 * POST AnswerSheet对象 TO Management 处理
+	 * @param uri
+	 * @param body
+	 */
 	private void postAnswerSheet(String uri, Object body) {
 		try {
 			restTemplate.postForLocation(uri, body);
@@ -76,7 +82,7 @@ public class ScoreCalcuService {
 	}
 
 	/**
-	 * 
+	 * 根据试卷id远程GET获取该试卷对象
 	 * @param examaperId
 	 * @return
 	 */
