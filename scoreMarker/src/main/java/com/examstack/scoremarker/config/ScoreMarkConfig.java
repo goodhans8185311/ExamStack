@@ -72,6 +72,7 @@ public class ScoreMarkConfig {
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		
 		String propertyFilePath = Constants.CONFIG_PATH + File.separator 	+ "config" + File.separator + "scoremaker.properties";
+        System.out.println("#######################################  " + propertyFilePath + "  #########################################");		
 		File f = new File(propertyFilePath);
 		if (!f.exists()){
 			propertyFilePath = "config" + File.separator + "scoremaker.properties";
