@@ -23,7 +23,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
 
 /**
- * 
+ * 初始化
  * @author hans
  *
  */
