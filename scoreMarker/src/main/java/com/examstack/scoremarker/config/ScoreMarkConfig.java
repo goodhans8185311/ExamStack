@@ -23,7 +23,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
 
 /**
- * 初始化
+ * 初始化环境变量
  * @author hans
  *
  */
@@ -62,11 +62,12 @@ public class ScoreMarkConfig {
 	}
 
 	/**
-	 * 配置文件读取
+	 * 配置文件读取   config/scoremaker.properties
 	 * @return
 	 */
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+		
 		String propertyFilePath = Constants.CONFIG_PATH + File.separator 	+ "config" + File.separator + "scoremaker.properties";
 		File f = new File(propertyFilePath);
 		if (!f.exists()){
