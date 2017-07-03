@@ -15,9 +15,12 @@ import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.ShutdownSignalException;
 /**
  * 引入RabbitMq，用于接受用户提交的答题卡，通过ScoreMarker从消息队列获取答题卡并交卷，减小大量用户提交导致的服务器故障几率。
- * @author LDP
+
+ * 考试试卷计算得分的处理引擎
+ * @author lidapeng
  *
  */
+
 @Component
 @SuppressWarnings("unused")
 public class ScoreMarkerWin {

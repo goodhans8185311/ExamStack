@@ -18,17 +18,18 @@ import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.ShutdownSignalException;
 
 /**
- * 
- * @author Ocelot
+ * 考试试卷计算得分的处理引擎
+ * @author lidapeng
  *
  */
-@Component
+@Component@SuppressWarnings("unused")
 public class ScoreMarkerMain extends AbstractDaemon {
 
 	@Autowired
 	private QueueingConsumer consumer;
 
 	private static final Logger LOGGER = Logger.getLogger(ScoreMarkerMain.class);
+	
 	private boolean waitingForMessage = false;
 	@Autowired
 	private ScoreCalcuService scoreCalcuService;
@@ -88,7 +89,7 @@ public class ScoreMarkerMain extends AbstractDaemon {
 
 	@Override
 	protected void run() {
-		while (!isShutdownRequested()) {
+		while (!isShutdownRequested()) {//是否关闭停止
 			try {
 				LOGGER.info("scoreMaker checking next delivery from message queue");
 				waitingForMessage = true;
@@ -114,7 +115,6 @@ public class ScoreMarkerMain extends AbstractDaemon {
 				LOGGER.error("scoreMaker received exception", e);
 			}
 		}
-
 	}
 
 }

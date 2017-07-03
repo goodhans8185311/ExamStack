@@ -39,9 +39,13 @@ public class ScoreCalcuService {
 
 	private static final Logger LOGGER = Logger.getLogger(ScoreCalcuService.class);
 
+	/**
+	 * 
+	 * @param as
+	 */
 	public void calcuScore(AnswerSheet as) {
 		System.out.println("########################################   AnswerSheet is calculating... " + as +"  #######################################################" );
-
+        // TODO 远程获取该试卷对象
 		ExamPaper examPaper = Examapapers.get(as.getExamPaperId());
 
 		// TODO 计算得分 结果等数据..
@@ -49,17 +53,19 @@ public class ScoreCalcuService {
 			examPaper = this.getExamPaper(as.getExamPaperId());
 			Examapapers.put(examPaper.getId() + "", examPaper);
 		}
+		// TODO 该试卷答题卡数据对象
 		Gson gson = new Gson();
 		AnswerSheet target = gson.fromJson(examPaper.getAnswer_sheet(),AnswerSheet.class);
+		// TODO 试题id 与  试题答案映射
 		HashMap<Integer,AnswerSheetItem> answerMap = new HashMap<Integer,AnswerSheetItem>();
 		for(AnswerSheetItem item : target.getAnswerSheetItems()){
 			answerMap.put(item.getQuestionId(), item);
 		}
 		as.setPointMax(target.getPointMax());
 		for(AnswerSheetItem item : as.getAnswerSheetItems()){
-			if(item.getAnswer().equals(answerMap.get(item.getQuestionId()).getAnswer())){
+			if(item.getAnswer().equals(answerMap.get(item.getQuestionId()).getAnswer())){//判断该题是否正确
 				as.setPointRaw(as.getPointRaw() + answerMap.get(item.getQuestionId()).getPoint());
-				item.setPoint(answerMap.get(item.getQuestionId()).getPoint());
+				item.setPoint(answerMap.get(item.getQuestionId()).getPoint());//该题的分数
 				item.setRight(true);
 			}
 		}

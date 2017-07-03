@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 
 public abstract class AbstractDaemon implements Daemon {
+	
 	protected AnnotationConfigApplicationContext context;
 	private boolean shutdownRequested = false;
 	protected Thread workThread;
