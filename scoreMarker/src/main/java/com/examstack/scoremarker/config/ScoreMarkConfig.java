@@ -63,6 +63,9 @@ public class ScoreMarkConfig {
 
 	/**
 	 * 配置文件读取   config/scoremaker.properties
+	 * examstack.answersheet.posturi=http://127.0.0.1:8080/Management/api/answersheet
+     * examstack.exampaper.geturi=http://127.0.0.1:8080/Management/api/exampaper
+	 * 
 	 * @return
 	 */
 	@Bean

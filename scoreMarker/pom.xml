@@ -101,42 +101,42 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-		<plugin>  
-    <groupId>org.apache.maven.plugins</groupId>  
-    <artifactId>maven-shade-plugin</artifactId>  
-    <configuration>
+	  <plugins>
+		 <plugin>  
+          <groupId>org.apache.maven.plugins</groupId>  
+          <artifactId>maven-shade-plugin</artifactId>  
+          <configuration>
 					<encoding>UTF-8</encoding>
 					<source>1.8</source>
 					<target>1.8</target>
-				</configuration>
-    <version>1.4</version>  
-    <executions>  
-        <execution>  
-            <phase>package</phase>  
-            <goals>  
+		  </configuration>
+          <version>1.4</version>  
+         <executions>  
+           <execution>  
+              <phase>package</phase>  
+              <goals>  
                 <goal>shade</goal>  
-            </goals>  
-            <configuration>  
+              </goals>  
+              <configuration>  
                 <transformers>  
-                    <transformer  
+                   <!--  <transformer  
                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
                         <resource>META-INF/spring.handlers</resource>  
-                    </transformer>  
+                    </transformer>   -->
                     <transformer  
                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">  
-                        <mainClass>com.chenzhou.examples.Main</mainClass>  
+                        <mainClass>com.examstack.scoremarker.ScoreMarkerWin</mainClass>  
                     </transformer>  
-                    <transformer  
+                  <!--  <transformer  
                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
                         <resource>META-INF/spring.schemas</resource>  
-                    </transformer>  
+                    </transformer>   --> 
                 </transformers>  
-            </configuration>  
-        </execution>  
-    </executions>  
-</plugin>  
-			<plugin>
+              </configuration>  
+            </execution>  
+          </executions>  
+        </plugin>  
+		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
