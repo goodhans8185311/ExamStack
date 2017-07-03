@@ -47,7 +47,6 @@ public class ScoreMarkerWin {
 	 * 初始化Spring上下文，实例化类
 	 * 注册读取配置信息类
 	 * 
-	 * 
 	 */
 	@SuppressWarnings("resource")
 	public void init() {
