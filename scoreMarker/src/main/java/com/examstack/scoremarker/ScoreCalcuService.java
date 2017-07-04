@@ -32,7 +32,7 @@ public class ScoreCalcuService {
 	private static final Logger LOGGER = Logger.getLogger(ScoreCalcuService.class);
 
 	/**
-	 * 
+	 * 计算分数
 	 * @param as
 	 */
 	public void calcuScore(AnswerSheet as) {
@@ -101,5 +101,11 @@ public class ScoreCalcuService {
 	}
 	
 	
+	public static void main(String []args){
+		
+		ScoreCalcuService cal = new ScoreCalcuService();
+		cal.getExamPaper(2);
+		
+	}
 
 }
