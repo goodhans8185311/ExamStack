@@ -78,7 +78,6 @@ public class ScoreMarkerMain extends AbstractDaemon {
 		} else {
 			LOGGER.error("ScoreMarker daemon startup failed, work thread isn't initialized.");
 		}
-
 	}
 
 	@Override
@@ -97,6 +96,7 @@ public class ScoreMarkerMain extends AbstractDaemon {
 				waitingForMessage = false;
 				AnswerSheet answerSheet = mapper.readValue(delivery.getBody(),
 						AnswerSheet.class);
+				//计算得分
 				scoreCalcuService.calcuScore(answerSheet);
 				
 				
