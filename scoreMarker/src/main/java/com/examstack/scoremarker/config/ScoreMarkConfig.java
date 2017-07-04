@@ -1,16 +1,12 @@
 package com.examstack.scoremarker.config;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.web.client.RestTemplate;
 
 import com.examstack.common.Constants;
@@ -33,17 +29,6 @@ public class ScoreMarkConfig {
 
 	private static final Logger LOGGER = Logger.getLogger(ScoreMarkerMain.class);
 
-	@Value("${rabbitmq.host}")
-	private String messageQueueHostname;
-	
-	@Value("${examstack.answersheet.posturi}")
-	private String answerSheetPostUri;
-	
-	@Value("${examstack.exampaper.geturi}")
-	private String examPaperGetUri;
-	
-//	private HashMap<String,ExamPaper> examPapersMap = new HashMap<String,ExamPaper>();;
-
 	/**
 	 * rabbitMQ 消费者
 	 * @return
@@ -52,35 +37,13 @@ public class ScoreMarkConfig {
 	QueueingConsumer queueingConsumer() throws IOException {
 		LOGGER.info("##############################################   初始化RabbitMQ Consumer 消费者        #####################################################");
 		ConnectionFactory factory = new ConnectionFactory();//rabbitMQ 连接工厂
-		factory.setHost(messageQueueHostname); //rabbitmq.host
+		factory.setHost(Constant.messageQueueHostname); //rabbitmq.host
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 		channel.queueDeclare(Constants.ANSWERSHEET_DATA_QUEUE, true, false, false, null);
 		QueueingConsumer consumer = new QueueingConsumer(channel);
 		channel.basicConsume(Constants.ANSWERSHEET_DATA_QUEUE, true, consumer);
 		return consumer;
-	}
-
-	/**
-	 * 配置文件读取   config/scoremaker.properties
-	 * examstack.answersheet.posturi=http://127.0.0.1:8080/Management/api/answersheet
-     * examstack.exampaper.geturi=http://127.0.0.1:8080/Management/api/exampaper
-	 * 
-	 * @return
-	 */
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-		
-		String propertyFilePath = Constants.CONFIG_PATH + File.separator 	+ "config" + File.separator + "scoremaker.properties";
-        System.out.println("#######################################  " + propertyFilePath + "  #########################################");		
-		File f = new File(propertyFilePath);
-		if (!f.exists()){
-			propertyFilePath = "config" + File.separator + "scoremaker.properties";
-		}
-		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-		org.springframework.core.io.Resource[] properties = new FileSystemResource[] { new FileSystemResource(propertyFilePath) };
-		propertySourcesPlaceholderConfigurer.setLocations(properties);
-		return propertySourcesPlaceholderConfigurer;
 	}
 
 	@Bean
@@ -95,17 +58,6 @@ public class ScoreMarkConfig {
 		return new HashMap<String, ExamPaper>();
 	}
 	
-	@Bean
-	String answerSheetPostUri()
-	{
-		return answerSheetPostUri;
-	}
-	
-	@Bean
-	String examPaperGetUri()
-	{
-		return examPaperGetUri;
-	}
 	
 	@Bean
 	RestTemplate restTemplate()

@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -13,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import com.examstack.common.domain.exam.AnswerSheet;
 import com.examstack.common.domain.exam.AnswerSheetItem;
 import com.examstack.common.domain.exam.ExamPaper;
+import com.examstack.scoremarker.config.Constant;
 import com.google.gson.Gson;
 /**
  * 学员考试分数计算服务
@@ -25,14 +25,6 @@ public class ScoreCalcuService {
 
 	@Autowired
 	RestTemplate restTemplate;
-
-	@Autowired
-	@Qualifier("answerSheetPostUri")
-	private String answerSheetPostUri;
-
-	@Autowired
-	@Qualifier("examPaperGetUri")
-	private String examPaperGetUri;
 
 	@Autowired
 	HashMap<String, ExamPaper> Examapapers;
@@ -70,8 +62,8 @@ public class ScoreCalcuService {
 			}
 		}
 		// TODO 把计算完得分的 AnswerSheet对象 回传给Management
-		this.postAnswerSheet(answerSheetPostUri, as);
-		System.out.println("##################################################  AnswerSheet has been post to" + answerSheetPostUri + " ##################################################");
+		this.postAnswerSheet(Constant.answerSheetPostUri, as);
+		System.out.println("##################################################  AnswerSheet has been post to" + Constant.answerSheetPostUri + " ##################################################");
 	}
 
 	/**
@@ -96,7 +88,7 @@ public class ScoreCalcuService {
 		ExamPaper examPaper = null;
 		try {
 			System.out.println("try to fetch exampaper");
-			examPaper = restTemplate.getForObject(examPaperGetUri + "/" + examaperId, ExamPaper.class);
+			examPaper = restTemplate.getForObject(Constant.examPaperGetUri + "/" + examaperId, ExamPaper.class);
 		} catch (RestClientException e) {
 			LOGGER.error("Get Exampaper exception:", e);
 		}
@@ -107,5 +99,7 @@ public class ScoreCalcuService {
 		return examPaper;
 
 	}
+	
+	
 
 }
