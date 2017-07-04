@@ -25,7 +25,7 @@ public class MenuPage {
 	private SystemService systemService;
 
 	/**
-	 * 
+	 * 跳转顶部导航菜单页面  
 	 * @param model
 	 * @param request
 	 * @return

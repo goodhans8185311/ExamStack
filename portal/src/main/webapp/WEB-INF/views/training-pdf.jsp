@@ -161,7 +161,7 @@ body, html {
 </head>
 
 <body>
-
+ <%@include file="common/header.jsp"%>
 	<!-- Navigation bar starts -->
 
 

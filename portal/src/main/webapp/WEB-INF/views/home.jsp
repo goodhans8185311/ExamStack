@@ -92,7 +92,6 @@ String basePath = request.getScheme() + "://"
 
 		<div class="full-slider">
 			<!-- Slider (Flex Slider) -->
-
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -104,7 +103,6 @@ String basePath = request.getScheme() + "://"
 								</div>
 								<!-- Right column -->
 								<div class="col-r">
-
 								</div>
 							</div>
 						</div>
