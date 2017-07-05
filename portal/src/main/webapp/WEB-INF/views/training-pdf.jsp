@@ -202,7 +202,7 @@ body, html {
   			</video>
  --%>
  
- 			<embed src="${section.filePath }" style="width:100%;height:100%;" /> 
+ 			<embed src="${section.filePath}" style="width:100%;height:100%;" /> 
 		</div>
 
 		<div style="background-color: #000; height: 100%; display: none;">

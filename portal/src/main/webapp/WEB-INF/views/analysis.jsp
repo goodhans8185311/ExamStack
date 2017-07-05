@@ -57,12 +57,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</style>
 	</head>
 	<body>
-
         <%@include file="common/header.jsp"%>
-
 		<div>
-			<!-- Slider (Flex Slider) -->
-
 			<div class="container" style="min-height:500px;">
 
 				<div class="row">

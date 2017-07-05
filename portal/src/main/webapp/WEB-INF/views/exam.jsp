@@ -17,7 +17,7 @@ String basePath = request.getScheme() + "://"
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>ExamStack</title>
+		<title>学员考试</title>
 		<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -179,7 +179,6 @@ String basePath = request.getScheme() + "://"
 		</div>
 
 		<%@include file="common/footer.jsp"%>
-		<!-- Slider Ends -->
 
 		<!-- Javascript files -->
 		<!-- jQuery -->

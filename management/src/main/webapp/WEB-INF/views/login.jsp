@@ -14,8 +14,7 @@ String basePath = request.getScheme() + "://"
 		<base href="<%=basePath%>">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>ExamStack 登录系统</title>
-		
+		<title>在线考试登录系统</title>
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="keywords" content="">
 		<link rel="shortcut icon" href="<%=basePath%>resources/images/favicon.ico" />
@@ -27,7 +26,6 @@ String basePath = request.getScheme() + "://"
 				margin-bottom: 5px;
 				height: 59px;
 			}
-
 		</style>
 	</head>
 	<body>
@@ -36,7 +34,6 @@ String basePath = request.getScheme() + "://"
 				<div class="row">
 					<div class="col-xs-5">
 						<div class="logo">
-							<h1><a href="#">网站管理系统</a></h1>
 							<div class="hmeta">
 								专注互联网在线考试解决方案
 							</div>

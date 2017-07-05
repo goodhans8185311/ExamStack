@@ -42,50 +42,7 @@ request.setAttribute("leftMenuId",list[3]);
 		</style>
 	</head>
 	<body>
-		<header>
-			<span style="display:none;" id="rule-role-val"><%=list[1]%></span>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-5">
-						<div class="logo">
-							<h1><a href="#">网站管理系统</a></h1>
-							<div class="hmeta">
-								专注互联网在线考试解决方案
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-7" id="login-info">
-						<c:choose>
-							<c:when test="${not empty sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}">
-								<div id="login-info-user">
-									
-									<a href="user-detail/${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}" id="system-info-account" target="_blank">${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</a>
-									<span>|</span>
-									<a href="j_spring_security_logout"><i class="fa fa-sign-out"></i> 退出</a>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<a class="btn btn-primary" href="user-register">用户注册</a>
-								<a class="btn btn-success" href="user-login-page">登录</a>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
-			</div>
-		</header>
-		<!-- Navigation bar starts -->
-
-		<div class="navbar bs-docs-nav" role="banner">
-			<div class="container">
-				<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-					<c:import url="/common-page/top-menu?topMenuId=${topMenuId}&leftMenuId=${leftMenuId}" charEncoding="UTF-8" />
-				</nav>
-			</div>
-		</div>
-
-		<!-- Navigation bar ends -->
-
-		<!-- Slider starts -->
+		<%@include file="common/header.jsp"%>
 
 		<div>
 			<!-- Slider (Flex Slider) -->
@@ -145,23 +102,7 @@ request.setAttribute("leftMenuId",list[3]);
 			</div>
 		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="copy">
-							<p>
-								ExamStack Copyright © <a href="http://www.examstack.com/" target="_blank">ExamStack</a> - <a href="." target="_blank">主页</a> | <a href="http://www.examstack.com/" target="_blank">关于我们</a> | <a href="http://www.examstack.com/" target="_blank">FAQ</a> | <a href="http://www.examstack.com/" target="_blank">联系我们</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</footer>
-
-		<!-- Slider Ends -->
+	    <%@include file="common/footer.jsp"%>
 
 		<!-- Javascript files -->
 		<!-- jQuery -->

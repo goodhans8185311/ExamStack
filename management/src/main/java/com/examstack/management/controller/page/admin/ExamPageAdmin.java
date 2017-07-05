@@ -149,7 +149,7 @@ public class ExamPageAdmin {
 		model.addAttribute("limit", limit);
 		model.addAttribute("order", order);
 		model.addAttribute("searchStr", searchStr);
-		return "user-exam-list";
+		return "exam-student-list";
 	}
 	
 	/**
