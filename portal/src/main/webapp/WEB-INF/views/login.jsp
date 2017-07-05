@@ -44,7 +44,7 @@ String basePath = request.getScheme() + "://"
 
 					<div class="col-md-12">
 						<div class="lrform">
-							<h5>登陆ExamStack</h5>
+							<h5>学员登录</h5>
 							<div class="form">
 								<!-- Login form (not working)-->
 								<form class="form-horizontal" action="j_spring_security_check" method="post">
