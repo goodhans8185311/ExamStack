@@ -282,9 +282,9 @@ body, html {
 				id="home-tab" role="tab" data-toggle="tab" aria-controls="home"
 				aria-expanded="true"> <i class="fa fa-th-list"></i> 选择章节
 			</a></li>
-			<li role="presentation"><a href="#profile" role="tab"
+			<!-- <li role="presentation"><a href="#profile" role="tab"
 				id="profile-tab" data-toggle="tab" aria-controls="profile"><i
-					class="fa fa-comments-o"></i> 评论</a></li>
+					class="fa fa-comments-o"></i> 评论</a></li> -->
 		</ul>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="home">
@@ -310,7 +310,7 @@ body, html {
 					</c:forEach>
 				</ul>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="profile">
+			<!-- <div role="tabpanel" class="tab-pane" id="profile">
 				<div class="expand-bk-content" id="bk-conent-comment"
 					style="margin-top: 10px; padding: 10px;">
 					<div id="comment-title" style="margin-bottom: 15px;">
@@ -334,7 +334,7 @@ body, html {
 					<input type="hidden" id="last-floor-hidden" value="0">
 					<button id="show-more-btn" disabled="disabled" style="margin:10px 0 10px 0;">没有更多评论了...</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

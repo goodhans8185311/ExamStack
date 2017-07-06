@@ -305,7 +305,7 @@ question_add = {
 	},
 
 	/**
-	 *
+	 * 检查知识点
 	 */
 	bindAddPoint : function bindAddPoint() {
 		$("#add-point-btn").click(function() {

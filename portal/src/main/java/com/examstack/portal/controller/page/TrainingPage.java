@@ -53,8 +53,7 @@ public class TrainingPage {
 			model.addAttribute("errorMsg", "章节不存在！");
 			return "error";
 		}
-		TrainingSection thisSection = null;
-		
+		TrainingSection thisSection = null;		
 		for(TrainingSection section : sectionList){
 			
 			if(section.getSectionId() == sectionId || sectionId == -1){

@@ -67,10 +67,7 @@ request.setAttribute("leftMenuId",list[3]);
 	<body>
         <%@include file="common/header.jsp"%>
 		<div>
-			<!-- Slider (Flex Slider) -->
-
 			<div class="container" style="min-height:500px;">
-
 				<div class="row">
 					<div class="col-xs-2" id="left-menu">
 						<c:import url="/common-page/left-menu?topMenuId=${topMenuId}&leftMenuId=${leftMenuId}" charEncoding="UTF-8" />

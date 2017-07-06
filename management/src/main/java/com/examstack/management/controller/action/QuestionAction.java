@@ -228,7 +228,6 @@ public class QuestionAction {
 		if (filePathList.size() == 0) {
 			return "系统错误";
 		}
-
 		return filePathList.get(0);
 	}
 	

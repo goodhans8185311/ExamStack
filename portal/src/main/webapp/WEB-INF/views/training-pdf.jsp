@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>ExamStack</title>
+<title>PDF培训资料</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -162,20 +162,11 @@ body, html {
 
 <body>
  <%@include file="common/header.jsp"%>
-	<!-- Navigation bar starts -->
-
-
-
-	<!-- Navigation bar ends -->
-
-	<!-- Slider starts -->
-
 	<div class="autoHeight">
 
 		<div class="training-top">
 			<i class="fa fa-chevron-circle-left"></i>
 			<!-- 课程主页 -->
-
 			<span>${section.trainingName }</span> <span class="section-title">${section.sectionName }</span>
 		</div>
 
@@ -215,9 +206,10 @@ body, html {
 				id="home-tab" role="tab" data-toggle="tab" aria-controls="home"
 				aria-expanded="true"> <i class="fa fa-th-list"></i> 选择章节
 			</a></li>
-			<li role="presentation"><a href="#profile" role="tab"
+			<!--<li role="presentation"><a href="#profile" role="tab"
 				id="profile-tab" data-toggle="tab" aria-controls="profile"><i
-					class="fa fa-comments-o"></i> 评论</a></li>
+					class="fa fa-comments-o"></i> 评论</a>
+			</li>  -->
 		</ul>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="home">
@@ -243,7 +235,7 @@ body, html {
 					</c:forEach>
 				</ul>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="profile">
+			<!-- <div role="tabpanel" class="tab-pane" id="profile">
 				<div class="expand-bk-content" id="bk-conent-comment"
 					style="margin-top: 10px; padding: 10px;">
 					<div id="comment-title" style="margin-bottom: 15px;">
@@ -267,7 +259,7 @@ body, html {
 					<input type="hidden" id="last-floor-hidden" value="0">
 					<button id="show-more-btn" disabled="disabled">没有更多评论了...</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

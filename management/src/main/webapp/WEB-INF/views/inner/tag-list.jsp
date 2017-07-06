@@ -189,7 +189,6 @@ request.setAttribute("leftMenuId",list[3]);
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 		</footer>

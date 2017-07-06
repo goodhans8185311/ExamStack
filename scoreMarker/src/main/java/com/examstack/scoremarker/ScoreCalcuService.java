@@ -97,7 +97,6 @@ public class ScoreCalcuService {
 			System.out.println("Get Exampaper exception: The specical Examaper is not existed.");
 		}
 		return examPaper;
-
 	}
 	
 	

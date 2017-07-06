@@ -79,12 +79,9 @@ String basePath = request.getScheme() + "://"
 								没有账号? <a href="user-register">注册</a>
 							</div>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 		<%@include file="common/footer.jsp"%>
 
