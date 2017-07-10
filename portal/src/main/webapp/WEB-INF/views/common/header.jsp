@@ -33,9 +33,11 @@
 			<div class="container">
 				<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 					<ul class="nav navbar-nav">
+				
 						<li class="active">
 							<a href="home"><i class="fa fa-home"></i>主页</a>
 						</li>
+			
 						<li>
 							<a href="student/practice-list"><i class="fa fa-edit"></i>试题练习</a>
 						</li>
@@ -55,5 +57,3 @@
 				</nav>
 			</div>
 		</div>
-
-		<!-- Navigation bar ends -->

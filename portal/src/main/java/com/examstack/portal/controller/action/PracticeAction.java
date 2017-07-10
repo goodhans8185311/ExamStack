@@ -44,7 +44,6 @@ public class PracticeAction {
 		try {
 			questionHistoryService.addUserQuestionHist(history);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			msg.setResult(e.getClass().getName());
 			e.printStackTrace();
 		}

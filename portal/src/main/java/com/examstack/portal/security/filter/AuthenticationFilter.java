@@ -46,7 +46,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		String username = this.obtainUsername(request);
 		String password = this.obtainPassword(request);
 		String flag = this.obtainFlagParameter(request);
-		
+		System.out.println("##################################################################################################################");
 		//加盐
 		String sh1Password = password + "{" + username + "}";
 		PasswordEncoder passwordEncoder = new StandardPasswordEncoderForSha1();

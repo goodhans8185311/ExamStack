@@ -70,6 +70,12 @@ public class UserPage {
 		return "redirect:home";
 	}
 	
+	/**
+	 * 学员首页  
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = { "home" }, method = RequestMethod.GET)
 	public String directToBaseHomePage(Model model, HttpServletRequest request) {
 		
@@ -100,8 +106,7 @@ public class UserPage {
 		if(userInfo.getHistId() != 0){
 			return "redirect:student/exam-start/" + userInfo.getExamId();
 		}
-		
-		
+		model.addAttribute("activeHomeClass", true);
 		return "home";
 	}
 	

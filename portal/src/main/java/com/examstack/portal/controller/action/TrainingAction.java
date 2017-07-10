@@ -41,7 +41,6 @@ public class TrainingAction {
 			}
 			trainingService.setUserTrainingHistory(history);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			msg.setResult(e.getClass().getName());
 			e.printStackTrace();
 		}

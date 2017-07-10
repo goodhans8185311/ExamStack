@@ -97,6 +97,8 @@
 
 	<!-- <bean id="Test" class="com.extr.util.EhcacheTest" /> -->
 	<!-- <bean id="UserService" class="com.extr.service.UserService" /> -->
+	
+	
 	<context:component-scan base-package="com.examstack.portal">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
