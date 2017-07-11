@@ -33,8 +33,25 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
       log.info("==============执行顺序: 1、preHandle================");    
       String requestUri = request.getRequestURI();  
       String contextPath = request.getContextPath();  
-      String url = requestUri.substring(contextPath.length());  
+      String url = requestUri.substring(contextPath.length()); 
+      request.getSession().removeAttribute("active");
       
+      if("/student/setting".equals(url) || "/student/change-password".equals(url)){
+    	  request.getSession().setAttribute("active", "setting");
+    	  log.info("个人设置");
+      }else if("/home".equals(url)){
+    	  request.getSession().setAttribute("active", "home");
+      }else if("/student/practice-list".equals(url)){
+    	  request.getSession().setAttribute("active", "practice");
+      }else if("/exam-list".equals(url)){
+    	  request.getSession().setAttribute("active", "exam");
+      }else if("/student/usercenter".equals(url) || "/student/analysis".equals(url) ||"/student/exam-history".equals(url) || "/student/training-history".equals(url)){
+    	  request.getSession().setAttribute("active", "center");
+      }else if("/training-list".equals(url)){
+    	  request.getSession().setAttribute("active", "training");
+      }else{
+    	  log.info("nothing");
+      }
       log.info("url:"+url);    
       return true;     
   }    
