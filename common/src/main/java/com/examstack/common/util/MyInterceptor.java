@@ -37,10 +37,10 @@ public class MyInterceptor implements Interceptor {
 			RoutingStatementHandler handler = (RoutingStatementHandler) invocation.getTarget();
 			StatementHandler delegate = (StatementHandler) ReflectUtil.getFieldValue(handler, "delegate");
 			BoundSql boundSql = delegate.getBoundSql();
-			log.info("------------------------------------------  拦截sql  ----------------------------------------------");
-			log.info(boundSql.getSql());
-			log.info("--------------------------------------------------------------------------------------------------");
-			log.info(" ");
+//			log.info("------------------------------------------  拦截sql  ----------------------------------------------");
+//			log.info(boundSql.getSql());
+//			log.info("--------------------------------------------------------------------------------------------------");
+//			log.info(" ");
 			//获取sql对应的参数
 			MapperParamMap<?> mapperParamMap = null;
 			try{
