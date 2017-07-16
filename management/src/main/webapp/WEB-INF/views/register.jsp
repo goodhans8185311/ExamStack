@@ -21,7 +21,7 @@ String basePath = request.getScheme() + "://"
 		<!--
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		-->
-		<title>ExamStack</title>
+		<title>学员注册</title>
 		<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
